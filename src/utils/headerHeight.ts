@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export const useHeaderHeight = () => {
   const [headerHeight, setHeaderHeight] = useState(60);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const updateHeaderHeight = () => {
