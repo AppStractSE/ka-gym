@@ -41,14 +41,14 @@ export default function Home() {
       </section>
       <section className="bg-vanilla-powder-500 w-full px-4 text-black">
         <div className="max-w-8xl mx-auto py-12">
-          <div className="grid grid-cols-4 grid-rows-3 gap-2 [&>*]:overflow-hidden [&>*]:rounded-sm ">
+          <div className="grid grid-cols-2 grid-rows-2 gap-2 md:grid-cols-4 md:grid-rows-3 [&>*]:overflow-hidden [&>*]:rounded-sm ">
             <div className="col-span-1 row-span-2">
               <Image
                 src="/hero-header.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
@@ -57,28 +57,28 @@ export default function Home() {
                 src="/row.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
-            <div className="col-span-1 row-span-1">
+            <div className="col-span-1 row-span-2 md:row-span-1">
               <Image
                 src="/legpress.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
-            <div className="col-span-1 row-span-2">
+            <div className="col-span-1 md:row-span-2">
               <Image
                 src="/hacksquat.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
@@ -87,28 +87,28 @@ export default function Home() {
                 src="/cardio.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
-            <div className="col-span-1 row-span-2">
+            <div className="col-span-1 row-span-1 md:row-span-2">
               <Image
                 src="/squatrack.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
-            <div className="col-span-1 row-span-1">
+            <div className="col-span-1 row-span-2 md:row-span-1">
               <Image
                 src="/bench.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
@@ -117,8 +117,8 @@ export default function Home() {
                 src="/tryon.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
@@ -127,8 +127,8 @@ export default function Home() {
                 src="/dumbbellroom.png"
                 alt=""
                 className="h-full object-cover"
-                width={1280}
-                height={1280}
+                width={768}
+                height={768}
                 priority
               />
             </div>
