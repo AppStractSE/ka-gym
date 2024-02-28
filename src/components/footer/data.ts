@@ -31,9 +31,8 @@ export const footerData: FooterLink[] = [
       },
       {
         label: "100% Ren Hårdträning",
-        href: "https://www.renhardtraning.com/",
-        internal: false,
-        icon: true,
+        href: "/renhardtraning",
+        internal: true,
       },
     ],
   },

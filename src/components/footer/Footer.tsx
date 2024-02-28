@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import stampPic from "public/popeye.png";
+import stampPic from "public/karlalfred.png";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { footerData } from "./data";
 
 const Footer = () => {
   return (
-    <footer className="shadow-t w-full border-t bg-vanilla-powder-500 px-4 text-black shadow-md">
-      <div className="mx-auto max-w-8xl py-12">
+    <footer className="w-full px-4 text-black border-t shadow-md shadow-t bg-vanilla-powder-500">
+      <div className="py-12 mx-auto max-w-8xl">
         <div className="flex justify-between md:items-end">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-6">
             {footerData.map((link) => (
@@ -62,7 +62,7 @@ const Footer = () => {
           <a
             href="https://appstract.se/"
             target="_blank"
-            className="flex w-fit items-center gap-1 text-xs text-black opacity-50 hover:underline sm:text-center"
+            className="flex items-center gap-1 text-xs text-black opacity-50 w-fit hover:underline sm:text-center"
           >
             Webbdesign av appstract © 2024
           </a>
