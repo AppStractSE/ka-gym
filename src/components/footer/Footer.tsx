@@ -27,7 +27,7 @@ const Footer = () => {
                         <a
                           href={link.href}
                           target="_blank"
-                          className="flex items-center gap-1 hover:underline hover:underline-offset-4"
+                          className="inline-flex items-center gap-1 hover:underline hover:underline-offset-4"
                         >
                           {link.label}
                           {link.icon ? (
