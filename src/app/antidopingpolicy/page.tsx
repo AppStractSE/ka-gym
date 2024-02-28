@@ -1,5 +1,5 @@
 const page = () => {
-  return <div>Ren hårdträning</div>;
+  return <div>Antidopingpolicy</div>;
 };
 
 export default page;
