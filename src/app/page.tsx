@@ -89,7 +89,7 @@ export default function Home() {
               </h6>
               <div className="flex justify-end">
                 <Link
-                  href="/renhardtraning"
+                  href="/antidopingpolicy"
                   className="px-4 py-2 bg-black border rounded text-vanilla-powder-500"
                 >
                   Läs mer
