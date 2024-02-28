@@ -1,4 +1,6 @@
-import Image from "next/image";
+import Grid from "@/components/grid/Grid";
+import GridItem from "@/components/grid/GridItem";
+import { pictures } from "@/data/pictures";
 import Link from "next/link";
 
 export default function Home() {
@@ -6,12 +8,12 @@ export default function Home() {
     <>
       <section className="relative flex w-full items-center bg-orange-300 bg-[url('/hero-header.png')] bg-cover bg-bottom px-4 md:min-h-[85vh] md:items-end ">
         <div className="absolute inset-0 bg-black bg-opacity-60" />
-        <div className="max-w-8xl relative mx-auto flex-1 space-y-12 py-24">
+        <div className="relative flex-1 py-24 mx-auto space-y-12 max-w-8xl">
           <div className="space-y-4">
-            <h1 className="text-3xl font-bold text-white md:text-6xl">
+            <h1 className="text-3xl font-bold text-vanilla-powder-500 md:text-6xl">
               Ett av Borås äldsta hardcoregym
             </h1>
-            <h6 className="text-lg font-medium md:w-1/2 md:text-xl">
+            <h6 className="text-lg font-medium text-vanilla-powder-500 md:w-1/2 md:text-xl">
               Sedan 1981 har vårt gym varit en fristad för de som vet att äkta
               framsteg kräver hårt arbete och beslutsamhet. Vi välkomnar alla,
               från nybörjare till veteraner, att delta i vår gemenskap och
@@ -23,7 +25,7 @@ export default function Home() {
             <div>
               <Link
                 href="/trana"
-                className="text-vanilla-powder-500 hover:bg-vanilla-powder-500 hover:border-vanilla-powder-500 rounded border border-black bg-black px-4 py-2.5 transition-all duration-300 ease-in-out hover:text-black"
+                className="rounded border border-black bg-black px-4 py-2.5 text-vanilla-powder-500 transition-all duration-300 ease-in-out hover:border-vanilla-powder-500 hover:bg-vanilla-powder-500 hover:text-black"
               >
                 Bli medlem
               </Link>
@@ -31,7 +33,7 @@ export default function Home() {
             <div>
               <Link
                 href="/vart-gym"
-                className="bg-vanilla-powder-500 hover:text-vanilla-powder-500 border-vanilla-powder-500 rounded px-4 py-2.5 text-black transition-all duration-300 ease-in-out hover:border-black hover:bg-black"
+                className="rounded border-vanilla-powder-500 bg-vanilla-powder-500 px-4 py-2.5 text-black transition-all duration-300 ease-in-out hover:border-black hover:bg-black hover:text-vanilla-powder-500"
               >
                 Läs mer om gymmet
               </Link>
@@ -39,117 +41,65 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-vanilla-powder-500 w-full px-4 text-black">
-        <div className="max-w-8xl mx-auto py-12">
-          <div className="grid grid-cols-4 grid-rows-3 gap-2 [&>*]:overflow-hidden [&>*]:rounded-sm ">
-            <div className="col-span-1 row-span-2">
-              <Image
-                src="/hero-header.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
+      <section className="w-full px-4 text-black bg-vanilla-powder-500">
+        <div className="py-12 mx-auto max-w-8xl">
+          <Grid>
+            {pictures.map((picture, index) => (
+              <GridItem
+                key={index}
+                index={index}
+                arrayLength={pictures.length}
+                src={picture.src}
+                alt={picture.alt}
               />
-            </div>
-            <div className="col-span-1 row-span-1">
-              <Image
-                src="/row.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-            <div className="col-span-1 row-span-1">
-              <Image
-                src="/legpress.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-            <div className="col-span-1 row-span-2">
-              <Image
-                src="/hacksquat.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-            <div className="col-span-1 row-span-1">
-              <Image
-                src="/cardio.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-            <div className="col-span-1 row-span-2">
-              <Image
-                src="/squatrack.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-            <div className="col-span-1 row-span-1">
-              <Image
-                src="/bench.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-            <div className="col-span-1 row-span-1">
-              <Image
-                src="/tryon.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-            <div className="col-span-1 row-span-1">
-              <Image
-                src="/dumbbellroom.png"
-                alt=""
-                className="h-full object-cover"
-                width={1280}
-                height={1280}
-                priority
-              />
-            </div>
-          </div>
+            ))}
+          </Grid>
         </div>
       </section>
-      <section className="text-vanilla-powder-500 w-full bg-[#141513] px-4">
-        <div className="max-w-8xl mx-auto flex items-center justify-center py-24">
+      <section className="w-full bg-[#141513] px-4">
+        <div className="flex items-center justify-center py-24 mx-auto max-w-8xl">
           <div className="max-w-lg space-y-12 text-center">
-            <h4 className="text-5xl">Vill du träna hos oss?</h4>
-            <h6 className="text-2xl">
+            <h4 className="text-5xl font-semibold text-vanilla-powder-500">
+              Vill du träna hos oss?
+            </h4>
+            <h6 className="text-2xl font-medium text-vanilla-powder-500">
               Det finns inget att vänta på. Tryck på länken och kom och träna
               med oss redan idag!
             </h6>
             <div>
               <Link
                 href="/trana"
-                className="hover:bg-vanilla-powder-500 rounded border px-4 py-2 hover:text-black"
+                className="px-4 py-2 border rounded hover:bg-vanilla-powder-500 hover:text-black"
               >
                 Bli medlem
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full px-4 bg-vanilla-powder-500">
+        <div className="py-8 mx-auto max-w-7xl lg:py-24">
+          <div className="flex flex-col-reverse items-center justify-between gap-4 md:gap-8 md:flex-row">
+            <div className="md:max-w-lg">
+              <h4 className="mb-4 text-2xl font-medium text-black md:text-4xl">
+                Karl-Alfreds syn på doping
+              </h4>
+              <h6 className="mb-8 text-base font-medium text-black whitespace-pre-line md:text-xl">
+                {`Användningen av dopning bör undvikas av flera viktiga anledningar. Den kan orsaka betydande skador på kroppen, påverka den mentala hälsan negativt och äventyra relationerna till vänner, arbete, partner och familj. Risken är hög och konsekvenserna allvarliga.\n\nVarje gång någon avstår från dopning innebär det en vinst för många. Därför jobbar vi med 100% Ren hårdträning, där det centrala arbetet kretsar kring utbildning och samarbete mellan gym, polis och Borås stad för att förebygga och motverka användningen av dopning.`}
+              </h6>
+              <div className="flex justify-end">
+                <Link
+                  href="/renhardtraning"
+                  className="px-4 py-2 bg-black border rounded text-vanilla-powder-500"
+                >
+                  Läs mer
+                </Link>
+              </div>
+            </div>
+
+            <div className="md:max-w-md">
+              <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
+              <div></div>
             </div>
           </div>
         </div>
