@@ -18,12 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 .parent {
@@ -68,4 +65,11 @@ body {
 
 .div9 {
   grid-area: 3 / 1 / 4 / 2;
+}
+
+
+@layer components {
+  .contactform {
+    @apply p-4 block w-full rounded-md bg-vanilla-powder-500 text-xs text-[#141513] placeholder-gray-500 shadow-lg outline-2 focus:outline focus:outline-[#0077a7] md:text-sm;
+  }
 }
