@@ -78,8 +78,8 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full px-4 bg-vanilla-powder-500">
-        <div className="py-8 mx-auto max-w-8xl lg:py-24">
-          <div className="flex flex-col-reverse items-center justify-between gap-8 md:flex-row">
+        <div className="py-8 mx-auto max-w-7xl lg:py-24">
+          <div className="flex flex-col-reverse items-center justify-between gap-4 md:gap-8 md:flex-row">
             <div className="md:max-w-lg">
               <h4 className="mb-4 text-2xl font-medium text-black md:text-4xl">
                 Karl-Alfreds syn på doping
@@ -97,7 +97,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-12 md:max-w-md">
+            <div className="md:max-w-md">
               <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
               <div></div>
             </div>
