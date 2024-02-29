@@ -1,8 +1,8 @@
 import Image from "next/image";
 const page = () => {
   return (
-    <section className="w-full bg-vanilla-powder-500 px-4 text-[#141513]">
-      <div className="mx-auto max-w-8xl py-12">
+    <section className="w-full bg-vanilla-powder-500 px-4 text-night-500">
+      <div className="mx-auto max-w-6xl py-12">
         <div className="grid grid-cols-4 grid-rows-3 gap-2 [&>*]:overflow-hidden [&>*]:rounded-sm ">
           <div className="col-span-1 row-span-2">
             <Image
