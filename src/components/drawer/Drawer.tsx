@@ -18,7 +18,7 @@ export default function Drawer({ children, showDrawer, setShowDrawer }: Props) {
         }`}
     >
       <div
-        className={`delay-400 absolute right-0 h-full w-screen max-w-sm transform bg-vanilla-powder-500 text-[#141513] shadow-xl transition-all duration-500 ease-in-out
+        className={`delay-400 absolute right-0 h-full w-screen max-w-sm transform bg-vanilla-powder-500 text-night-500 shadow-xl transition-all duration-500 ease-in-out
           ${showDrawer ? "translate-x-0" : " translate-x-full"}`}
       >
         <div className="relative flex h-full w-screen max-w-sm flex-col space-y-6 overflow-y-scroll pb-10">

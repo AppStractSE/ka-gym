@@ -20,18 +20,8 @@ export const footerData: FooterLink[] = [
         internal: true,
       },
       {
-        label: "Prislista",
-        href: "/prislista",
-        internal: true,
-      },
-      {
         label: "Vårt gym",
         href: "/vart-gym",
-        internal: true,
-      },
-      {
-        label: "100% Ren Hårdträning",
-        href: "/renhardtraning",
         internal: true,
       },
     ],

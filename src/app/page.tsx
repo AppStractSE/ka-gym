@@ -9,9 +9,9 @@ import { IoMailOutline } from "react-icons/io5";
 export default function Home() {
   return (
     <>
-      <section className="relative flex w-full items-center bg-orange-300 bg-[url('/hero-header.png')] bg-cover bg-bottom px-4 md:min-h-[85vh] md:items-end ">
-        <div className="absolute inset-0 bg-[#141513] bg-opacity-60" />
-        <div className="relative flex-1 py-24 mx-auto space-y-12 max-w-8xl">
+      <section className="relative flex w-full items-center bg-[url('/hero-header.png')] bg-cover bg-bottom px-4 md:min-h-[85vh] md:items-end ">
+        <div className="absolute inset-0 bg-night-500 bg-opacity-60" />
+        <div className="relative flex-1 py-24 mx-auto space-y-12 max-w-6xl">
           <div className="space-y-4">
             <h1 className="text-3xl font-bold text-vanilla-powder-500 md:text-6xl">
               Ett av Borås äldsta hardcoregym
@@ -28,7 +28,7 @@ export default function Home() {
             <div>
               <Link
                 href="/trana"
-                className="rounded border border-[#141513] bg-[#141513] px-4 py-2.5 text-vanilla-powder-500 transition-all duration-300 ease-in-out hover:border-vanilla-powder-500 hover:bg-vanilla-powder-500 hover:text-[#141513]"
+                className="rounded border border-night-500 bg-night-500 px-4 py-2.5 text-vanilla-powder-500 transition-all duration-300 ease-in-out hover:border-vanilla-powder-500 hover:bg-vanilla-powder-500 hover:text-night-500"
               >
                 Bli medlem
               </Link>
@@ -36,7 +36,7 @@ export default function Home() {
             <div>
               <Link
                 href="/vart-gym"
-                className="rounded border-vanilla-powder-500 bg-vanilla-powder-500 px-4 py-2.5 text-[#141513] transition-all duration-300 ease-in-out hover:border-[#141513] hover:bg-[#141513] hover:text-vanilla-powder-500"
+                className="rounded border-vanilla-powder-500 bg-vanilla-powder-500 px-4 py-2.5 text-night-500 transition-all duration-300 ease-in-out hover:border-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
               >
                 Läs mer om gymmet
               </Link>
@@ -44,8 +44,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-vanilla-powder-500 px-4 text-[#141513]">
-        <div className="py-12 mx-auto max-w-8xl">
+      <section className="w-full bg-vanilla-powder-500 px-4 text-night-500 my-6">
+        <div className="mx-auto max-w-6xl">
           <Grid>
             {pictures.map((picture, index) => (
               <GridItem
@@ -59,8 +59,8 @@ export default function Home() {
           </Grid>
         </div>
       </section>
-      <section className="w-full bg-[#141513] px-4">
-        <div className="py-8 mx-auto max-w-7xl lg:py-24">
+      <section className="w-full px-4 my-6">
+        <div className="py-8 px-4 mx-auto max-w-6xl lg:py-12 lg:px-8 bg-night-500 rounded-md">
           <div className="flex flex-col-reverse justify-between gap-4 md:flex-row md:gap-8">
             <div className="md:max-w-md">
               <h6 className="mb-4 text-lg font-medium whitespace-pre-line text-vanilla-powder-500 md:text-2xl">
@@ -97,20 +97,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full px-4 bg-vanilla-powder-500">
-        <div className="py-8 mx-auto max-w-7xl lg:py-24">
+      <section className="w-full px-4 my-6">
+        <div className="py-8 px-4 mx-auto max-w-6xl lg:py-12 lg:px-8 bg-ka-red-100 rounded-md">
           <div className="flex flex-col-reverse items-center justify-between gap-4 md:flex-row md:gap-8">
             <div className="md:max-w-lg">
-              <h4 className="mb-4 text-2xl font-medium text-[#141513] md:text-4xl">
+              <h4 className="mb-4 text-2xl font-medium text-vanilla-powder-500 md:text-4xl">
                 Karl-Alfreds syn på doping
               </h4>
-              <h6 className="mb-8 whitespace-pre-line text-base font-medium text-[#141513] md:text-xl">
+              <h6 className="mb-8 whitespace-pre-line text-base font-medium text-vanilla-powder-500 md:text-xl">
                 {`Användningen av dopning bör undvikas av flera viktiga anledningar. Den kan orsaka betydande skador på kroppen, påverka den mentala hälsan negativt och äventyra relationerna till vänner, arbete, partner och familj. Risken är hög och konsekvenserna allvarliga.\n\nVarje gång någon avstår från dopning innebär det en vinst för många. Vi samverkar därför med Borås stad och andra gym i Borås kallat "Gym i samverkan mot dopningsfri miljö", där det centrala arbetet kretsar kring utbildning och samarbete mellan gym, polis och Borås stad för att förebygga och motverka användningen av dopning.`}
               </h6>
               <div className="flex justify-end">
                 <Link
                   href="/antidopingpolicy"
-                  className="rounded border bg-[#141513] px-4 py-2 text-vanilla-powder-500"
+                  className="rounded border bg-night-500 px-4 py-2 text-vanilla-powder-500"
                 >
                   Läs mer
                 </Link>

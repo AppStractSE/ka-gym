@@ -47,7 +47,7 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className="contactform font-medium hover:bg-[#141513] hover:text-vanilla-powder-500 hover:outline hover:outline-vanilla-powder-500 disabled:opacity-50 disabled:hover:bg-vanilla-powder-500 disabled:hover:text-[#141513] disabled:hover:outline-0"
+          className="contactform font-medium hover:bg-night-500 hover:text-vanilla-powder-500 hover:outline hover:outline-vanilla-powder-500 disabled:opacity-50 disabled:hover:bg-vanilla-powder-500 disabled:hover:text-night-500 disabled:hover:outline-0"
         >
           Skicka
         </button>

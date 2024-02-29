@@ -1,5 +1,5 @@
-import Footer from "@/components/footer/Footer";
 import Main from "@/components/Main";
+import Footer from "@/components/footer/Footer";
 import Navigation from "@/components/navigation/Navigation";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
@@ -17,7 +17,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={outfit.className}>
+      <body className={`${outfit.className} bg-vanilla-powder-500`}>
         <Navigation />
         <Main>{children}</Main>
         <Footer />
