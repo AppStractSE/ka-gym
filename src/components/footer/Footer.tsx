@@ -68,7 +68,7 @@ const Footer = () => {
           </a>
           <div className="flex items-center gap-1">
             <Link
-              href="/antidoping"
+              href="/antidopingpolicy"
               className="text-sm hover:underline hover:underline-offset-4"
             >
               Antidopingpolicy

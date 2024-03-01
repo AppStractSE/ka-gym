@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-vanilla-powder-500 px-4 text-night-500 my-6">
+      <section className="w-full px-4 text-night-500 my-6">
         <div className="mx-auto max-w-6xl">
           <Grid>
             {pictures.map((picture, index) => (
