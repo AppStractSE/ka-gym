@@ -40,8 +40,8 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="fixed top-0 z-10 w-full border-b bg-vanilla-powder-500 px-4 text-night-500 shadow-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
+      <header className="header">
+        <div>
           <Link href={"/"} className="mr-12">
             <Image
               src="/logo.png"
@@ -51,7 +51,7 @@ const Navigation = () => {
               className=""
             />
           </Link>
-          <nav className="hidden items-center gap-2 py-2 font-bold sm:flex">
+          <nav className="items-center hidden gap-2 py-2 font-bold sm:flex">
             {navigation.map((navItem) => (
               <Link
                 key={navItem.label}
@@ -62,7 +62,7 @@ const Navigation = () => {
               </Link>
             ))}
           </nav>
-          <div className="ml-auto block sm:hidden">
+          <div className="block ml-auto sm:hidden">
             <button
               onClick={() => setShowDrawer(!showDrawer)}
               className="m-2 -mr-2.5 block rounded p-2 text-3xl text-night-500 hover:text-sky-700"
