@@ -17,7 +17,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} bg-vanilla-powder-500`}>
+      <body className={outfit.className}>
         <Navigation />
         <Main>{children}</Main>
         <Footer />

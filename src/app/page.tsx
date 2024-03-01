@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <section className="relative flex w-full items-center bg-[url('/hero-header.png')] bg-cover bg-bottom px-4 md:min-h-[85vh] md:items-end ">
         <div className="absolute inset-0 bg-night-500 bg-opacity-60" />
-        <div className="relative flex-1 py-24 mx-auto space-y-12 max-w-6xl">
+        <div className="relative mx-auto max-w-6xl flex-1 space-y-12 py-24">
           <div className="space-y-4">
             <h1 className="text-3xl font-bold text-vanilla-powder-500 md:text-6xl">
               Ett av Borås äldsta hardcoregym
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-vanilla-powder-500 px-4 text-night-500 my-6">
+      <section className="my-6 w-full px-4 text-night-500">
         <div className="mx-auto max-w-6xl">
           <Grid>
             {pictures.map((picture, index) => (
@@ -59,11 +59,11 @@ export default function Home() {
           </Grid>
         </div>
       </section>
-      <section className="w-full px-4 my-6">
-        <div className="py-8 px-4 mx-auto max-w-6xl lg:py-12 lg:px-8 bg-night-500 rounded-md">
+      <section className="my-6 w-full px-4">
+        <div className="mx-auto max-w-6xl rounded-md bg-night-500 px-4 py-8 lg:px-8 lg:py-12">
           <div className="flex flex-col-reverse justify-between gap-4 md:flex-row md:gap-8">
             <div className="md:max-w-md">
-              <h6 className="mb-4 text-lg font-medium whitespace-pre-line text-vanilla-powder-500 md:text-2xl">
+              <h6 className="mb-4 whitespace-pre-line text-lg font-medium text-vanilla-powder-500 md:text-2xl">
                 Fyll i formuläret så kontaktar vi dig så snart vi kan!
               </h6>
               <ContactForm />
@@ -72,22 +72,22 @@ export default function Home() {
               <h4 className="mb-4 text-2xl font-medium text-vanilla-powder-500 md:text-4xl">
                 Vill du börja träna hos oss?
               </h4>
-              <h6 className="mb-8 text-base font-medium whitespace-pre-line text-vanilla-powder-500 md:text-xl">
+              <h6 className="mb-8 whitespace-pre-line text-base font-medium text-vanilla-powder-500 md:text-xl">
                 Det finns inget att vänta på, kom och träna med oss redan idag!
                 {"\n\n"}Fyll i formuläret så kontaktar vi dig så snart vi kan.
                 Det går också bra att ringa eller maila oss direkt.
               </h6>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col justify-center gap-2">
                 <a
                   href="tel:+46709405641"
-                  className="inline-flex items-center gap-2 w-fit hover:underline hover:underline-offset-4"
+                  className="inline-flex w-fit items-center gap-2 hover:underline hover:underline-offset-4"
                 >
                   <HiOutlinePhone />
                   070-940 56 41
                 </a>
                 <a
                   href="mailto:info@karlalfredgym.se"
-                  className="inline-flex items-center gap-2 w-fit hover:underline hover:underline-offset-4"
+                  className="inline-flex w-fit items-center gap-2 hover:underline hover:underline-offset-4"
                 >
                   <IoMailOutline />
                   info@karlalfredgym.se
@@ -97,8 +97,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full px-4 my-6">
-        <div className="py-8 px-4 mx-auto max-w-6xl lg:py-12 lg:px-8 bg-ka-red-100 rounded-md">
+      <section className="my-6 w-full px-4">
+        <div className="mx-auto max-w-6xl rounded-md bg-ka-red-100 px-4 py-8 lg:px-8 lg:py-12">
           <div className="flex flex-col-reverse items-center justify-between gap-4 md:flex-row md:gap-8">
             <div className="md:max-w-lg">
               <h4 className="mb-4 text-2xl font-medium text-vanilla-powder-500 md:text-4xl">

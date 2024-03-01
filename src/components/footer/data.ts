@@ -12,7 +12,7 @@ interface FooterLink {
 
 export const footerData: FooterLink[] = [
   {
-    label: "Länkar",
+    label: "Karl-Alfred Gym",
     links: [
       {
         label: "Träna",
@@ -27,7 +27,7 @@ export const footerData: FooterLink[] = [
     ],
   },
   {
-    label: "Här finns vi",
+    label: "Kontakt",
     links: [
       {
         label: "Vindelgatan 25B, 504 65 Borås",
