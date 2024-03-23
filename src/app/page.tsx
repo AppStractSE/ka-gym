@@ -5,6 +5,7 @@ import { pictures } from "@/data/pictures";
 import Link from "next/link";
 import { HiOutlinePhone } from "react-icons/hi";
 import { IoMailOutline } from "react-icons/io5";
+import { LuChevronRight } from "react-icons/lu";
 
 export default function Home() {
   return (
@@ -118,6 +119,39 @@ export default function Home() {
             </div>
             <div className="md:max-w-md">
               <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="my-6 w-full px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-3 items-center overflow-hidden rounded-lg bg-vanilla-powder-600">
+            <div className="col-span-1">
+              <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
+            </div>
+            <div className="col-span-2 p-12 text-night-500">
+              <div>
+                <h4 className="mb-4 text-2xl font-medium text-night-500 md:text-4xl">
+                  Karl-Alfreds syn på doping
+                </h4>
+                <p className="mb-12 text-base">
+                  Varje gång någon avstår från dopning innebär det en vinst för
+                  många. Vi samverkar därför med Borås stad och andra gym i
+                  Borås kallat {`"Gym i samverkan mot dopningsfri miljö"`}, där
+                  det centrala arbetet kretsar kring utbildning och samarbete
+                  mellan gym, polis och Borås stad för att förebygga och
+                  motverka användningen av dopning.
+                </p>
+                <div className="flex justify-end">
+                  <Link
+                    href="/antidopingpolicy"
+                    className="inline-flex items-center gap-2 text-base text-blue-500 hover:underline hover:underline-offset-4"
+                  >
+                    Läs mer
+                    <LuChevronRight />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
