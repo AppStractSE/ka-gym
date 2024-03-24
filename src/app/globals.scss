@@ -18,7 +18,7 @@ body {
       @apply flex items-center justify-between max-w-6xl mx-auto;
     }
 
-    @apply fixed top-0 z-10 w-full border-b bg-vanilla-powder-500 px-4 text-night-500 shadow-md;
+    @apply fixed top-0 w-full border-b bg-vanilla-powder-500 px-4 text-night-500 shadow-md z-[9999];
   }
 
   .contactform {
@@ -26,6 +26,23 @@ body {
   }
 
   .overlay {
-    @apply bg-night-500 absolute inset-0 bg-opacity-60;
+    @apply absolute inset-0;
+    background: radial-gradient(circle, rgba(24, 24, 26, 0.45) 0%, rgba(35, 49, 56, 0.65) 100%);
+  }
+}
+
+.swiper-pagination {
+  @apply mx-auto rounded mb-2 py-2 px-4 right-0 flex items-center;
+  width: fit-content !important;
+
+  .swiper-pagination-bullet {
+    --swiper-pagination-bullet-border-radius: 2px;
+    @apply w-2.5 h-2.5 bg-vanilla-powder-800 opacity-100;
+    border-radius: var(--swiper-pagination-bullet-border-radius);
+    transition: all ease 1s;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply bg-vanilla-powder-500 opacity-100;
   }
 }
