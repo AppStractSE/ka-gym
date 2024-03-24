@@ -5,16 +5,16 @@ import { LuChevronRight } from "react-icons/lu";
 export default function Home() {
   return (
     <>
-      <section className="relative flex w-full items-center px-4 md:min-h-[85vh] md:items-end">
+      <section className="relative flex min-h-[65vh] w-full items-end px-4 md:min-h-[85vh]">
         <div className="absolute inset-0">
           <HeaderSwiper />
         </div>
-        <div className="relative z-50 flex-1 max-w-6xl mx-auto my-24 space-y-12">
+        <div className="relative z-50 mx-auto my-24 max-w-6xl flex-1 space-y-12">
           <div className="space-y-4">
             <h1 className="text-3xl font-semibold text-vanilla-powder-500 md:text-6xl">
               Borås äldsta hardcoregym
             </h1>
-            <h6 className="font-medium font-base text-vanilla-powder-500 md:w-1/2 md:text-xl">
+            <h6 className="font-base font-medium text-vanilla-powder-500 md:w-1/2 md:text-xl">
               Sedan 1980 har vårt gym varit en fristad för de som vet att äkta
               framsteg kräver hårt arbete och beslutsamhet.
             </h6>
@@ -29,15 +29,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full px-4 my-6">
-        <div className="grid max-w-6xl grid-cols-1 gap-6 mx-auto md:grid-cols-2">
+      <section className="my-6 w-full px-4">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
           <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/hero-header.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
-            <div className="inset-0 overlay" />
-            <div className="relative z-40 grid gap-6 place-items-center">
-              <h2 className="text-3xl font-semibold text-center text-vanilla-powder-500 md:text-4xl">
+            <div className="overlay inset-0" />
+            <div className="relative z-40 grid place-items-center gap-6">
+              <h2 className="text-center text-3xl font-semibold text-vanilla-powder-500 md:text-4xl">
                 Vårt gym
               </h2>
-              <h6 className="text-base text-center font-base text-vanilla-powder-500 md:text-lg">
+              <h6 className="font-base text-center text-base text-vanilla-powder-500 md:text-lg">
                 Debitis voluptatem ipsa obcaecati alias quos odio veniam
                 aperiam, laudantium ut!
               </h6>
@@ -50,12 +50,12 @@ export default function Home() {
             </Link>
           </div>
           <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/legpress.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
-            <div className="inset-0 overlay" />
-            <div className="relative z-40 grid gap-6 place-items-center">
-              <h2 className="text-3xl font-semibold text-center text-vanilla-powder-500 md:text-4xl">
+            <div className="overlay inset-0" />
+            <div className="relative z-40 grid place-items-center gap-6">
+              <h2 className="text-center text-3xl font-semibold text-vanilla-powder-500 md:text-4xl">
                 Träna hos oss
               </h2>
-              <h6 className="text-base text-center font-base text-vanilla-powder-500 md:text-lg">
+              <h6 className="font-base text-center text-base text-vanilla-powder-500 md:text-lg">
                 Debitis voluptatem ipsa obcaecati alias quos odio veniam
                 aperiam, laudantium ut!
               </h6>
@@ -147,9 +147,9 @@ export default function Home() {
           </div>
         </div>
       </section> */}
-      <section className="w-full px-4 my-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid items-center grid-cols-1 overflow-hidden rounded-xl bg-vanilla-powder-600 md:grid-cols-3">
+      <section className="my-6 w-full px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 items-center overflow-hidden rounded-xl bg-vanilla-powder-600 md:grid-cols-3">
             <div className="col-span-1">
               <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
             </div>
