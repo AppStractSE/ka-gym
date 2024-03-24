@@ -11,7 +11,7 @@ export default function Home() {
         </div>
         <div className="relative z-50 mx-auto my-24 max-w-6xl flex-1 space-y-12">
           <div className="space-y-4">
-            <h1 className="text-3xl font-bold text-vanilla-powder-500 md:text-6xl">
+            <h1 className="text-3xl font-semibold text-vanilla-powder-500 md:text-6xl">
               Borås äldsta hardcoregym
             </h1>
             <h6 className="text-lg font-medium text-vanilla-powder-500 md:w-1/2 md:text-xl">
@@ -32,17 +32,17 @@ export default function Home() {
         </div>
       </section>
       <section className="my-6 w-full px-4">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6">
-          <div className="relative col-span-1 grid min-h-[35rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/hero-header.png')] bg-cover bg-bottom px-24 py-12">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/hero-header.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
             <div className="overlay inset-0" />
             <div className="relative z-40 grid place-items-center gap-6">
-              <h4 className="text-2xl font-medium text-vanilla-powder-500 md:text-4xl">
+              <h2 className="text-center text-3xl font-semibold text-vanilla-powder-500 md:text-4xl">
                 Vårt gym
-              </h4>
-              <p className="text-center text-base text-vanilla-powder-500">
+              </h2>
+              <h6 className="font-base text-center text-base text-vanilla-powder-500 md:text-lg">
                 Debitis voluptatem ipsa obcaecati alias quos odio veniam
                 aperiam, laudantium ut!
-              </p>
+              </h6>
             </div>
             <Link
               href="/vart-gym"
@@ -51,16 +51,16 @@ export default function Home() {
               Läs mer om gymmet
             </Link>
           </div>
-          <div className="relative col-span-1 grid min-h-[35rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/legpress.png')] bg-cover bg-bottom px-24 py-12">
+          <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/legpress.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
             <div className="overlay inset-0" />
             <div className="relative z-40 grid place-items-center gap-6">
-              <h4 className="text-2xl font-medium text-vanilla-powder-500 md:text-4xl">
+              <h2 className="text-center text-3xl font-semibold text-vanilla-powder-500 md:text-4xl">
                 Träna hos oss
-              </h4>
-              <p className="text-center text-base text-vanilla-powder-500">
+              </h2>
+              <h6 className="font-base text-center text-base text-vanilla-powder-500 md:text-lg">
                 Debitis voluptatem ipsa obcaecati alias quos odio veniam
                 aperiam, laudantium ut!
-              </p>
+              </h6>
             </div>
             <Link
               href="/bli-medlem"
@@ -151,11 +151,11 @@ export default function Home() {
       </section> */}
       <section className="my-6 w-full px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-3 items-center overflow-hidden rounded-lg bg-vanilla-powder-600">
+          <div className="grid grid-cols-1 items-center overflow-hidden rounded-xl bg-vanilla-powder-600 md:grid-cols-3">
             <div className="col-span-1">
               <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
             </div>
-            <div className="col-span-2 p-12 text-night-500">
+            <div className="col-span-2 p-6 text-night-500 md:p-12">
               <div>
                 <h4 className="mb-4 text-2xl font-medium text-night-500 md:text-4xl">
                   Karl-Alfreds syn på doping
