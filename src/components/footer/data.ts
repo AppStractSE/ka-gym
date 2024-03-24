@@ -15,8 +15,8 @@ export const footerData: FooterLink[] = [
     label: "Karl-Alfred Gym",
     links: [
       {
-        label: "Träna",
-        href: "/trana",
+        label: "Bli medlem",
+        href: "/bli-medlem",
         internal: true,
       },
       {

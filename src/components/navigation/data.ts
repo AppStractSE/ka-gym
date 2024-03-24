@@ -5,8 +5,8 @@ export interface NavItem {
 
 export const navigation: NavItem[] = [
   {
-    href: "/trana",
-    label: "Träna",
+    href: "/bli-medlem",
+    label: "Bli medlem",
   },
   {
     href: "/vart-gym",
