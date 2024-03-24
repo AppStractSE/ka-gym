@@ -14,7 +14,7 @@ export default function Home() {
             <h1 className="text-3xl font-semibold text-vanilla-powder-500 md:text-6xl">
               Borås äldsta hardcoregym
             </h1>
-            <h6 className="text-lg font-medium text-vanilla-powder-500 md:w-1/2 md:text-xl">
+            <h6 className="font-base font-medium text-vanilla-powder-500 md:w-1/2 md:text-xl">
               Sedan 1980 har vårt gym varit en fristad för de som vet att äkta
               framsteg kräver hårt arbete och beslutsamhet. Vi välkomnar alla,
               från nybörjare till veteraner, att delta i vår gemenskap och
