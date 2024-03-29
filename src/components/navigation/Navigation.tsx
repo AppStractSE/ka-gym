@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -43,20 +42,16 @@ const Navigation = () => {
       <header className="header">
         <div>
           <Link href={"/"} className="mr-12">
-            <Image
-              src="/logo.png"
-              alt=""
-              width={120}
-              height={70}
-              className=""
-            />
+            <h1 className="text-3xl tracking-tight md:text-4xl">
+              Karl-Alfred Gym
+            </h1>
           </Link>
           <nav className="items-center hidden gap-2 py-2 font-bold sm:flex">
             {navigation.map((navItem) => (
               <Link
                 key={navItem.label}
                 href={navItem.href}
-                className={`px-2 py-2 text-sm decoration-2 underline-offset-[6px] hover:underline md:px-6 md:py-4 md:text-base lg:text-lg ${pathname === navItem.href ? "underline" : "text-night-500"}`}
+                className={`px-2 py-2 text-sm font-normal decoration-2 underline-offset-[6px] hover:underline md:px-6 md:py-4 md:text-base lg:text-lg ${pathname === navItem.href ? "underline" : "text-night-500"}`}
               >
                 {navItem.label}
               </Link>

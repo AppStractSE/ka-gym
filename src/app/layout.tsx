@@ -2,7 +2,7 @@ import Main from "@/components/Main";
 import Footer from "@/components/footer/Footer";
 import Navigation from "@/components/navigation/Navigation";
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Bebas_Neue, Outfit } from "next/font/google";
 import { ReactNode } from "react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -16,11 +16,17 @@ export const metadata: Metadata = {
 };
 
 const outfit = Outfit({ subsets: ["latin"] });
+export const bebas_neue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-bebas-neue",
+});
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={outfit.className}>
+      <body className={`${outfit.className} ${bebas_neue.variable}`}>
         <Navigation />
         <Main>{children}</Main>
         <Footer />

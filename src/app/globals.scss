@@ -9,7 +9,7 @@
 }
 
 body {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @layer components {
@@ -45,4 +45,12 @@ body {
   .swiper-pagination-bullet-active {
     @apply bg-vanilla-powder-500 opacity-100;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+a {
+  font-family: var(--font-bebas-neue);
 }
