@@ -14,15 +14,16 @@ export default function Home() {
             <h1 className="text-3xl font-semibold text-vanilla-powder-500 md:text-6xl">
               Borås äldsta hardcoregym
             </h1>
+
             <h6 className="font-base font-medium text-vanilla-powder-500 md:w-1/2 md:text-xl">
               Sedan 1980 har vårt gym varit en fristad för de som vet att äkta
               framsteg kräver hårt arbete och beslutsamhet.
             </h6>
           </div>
-          <div>
+          <div className="inline-block">
             <Link
               href="/bli-medlem"
-              className="rounded bg-vanilla-powder-500 px-6 py-2.5 text-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
+              className="block w-fit rounded bg-vanilla-powder-500 px-6 py-2.5 text-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
             >
               Bli medlem
             </Link>
@@ -32,7 +33,7 @@ export default function Home() {
       <section className="my-6 w-full px-4">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
           <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/hero-header.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
-            <div className="overlay inset-0" />
+            <div className="absolute inset-0 bg-black bg-opacity-50" />
             <div className="relative z-40 grid place-items-center gap-6">
               <h2 className="text-center text-3xl font-semibold text-vanilla-powder-500 md:text-4xl">
                 Vårt gym
@@ -44,13 +45,13 @@ export default function Home() {
             </div>
             <Link
               href="/vart-gym"
-              className="relative z-50 mt-auto w-fit place-self-center rounded bg-vanilla-powder-500 px-6 py-2.5 text-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
+              className="relative z-50 mt-auto block w-fit place-self-center rounded bg-vanilla-powder-500 px-6 py-2.5 text-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
             >
               Läs mer om gymmet
             </Link>
           </div>
           <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/legpress.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
-            <div className="overlay inset-0" />
+            <div className="absolute inset-0 bg-black bg-opacity-50" />
             <div className="relative z-40 grid place-items-center gap-6">
               <h2 className="text-center text-3xl font-semibold text-vanilla-powder-500 md:text-4xl">
                 Träna hos oss
@@ -62,7 +63,7 @@ export default function Home() {
             </div>
             <Link
               href="/bli-medlem"
-              className="relative z-50 mt-auto w-fit place-self-center rounded bg-vanilla-powder-500 px-6 py-2.5 text-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
+              className="relative z-50 mt-auto block w-fit place-self-center rounded bg-vanilla-powder-500 px-6 py-2.5 text-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
             >
               Bli medlem
             </Link>

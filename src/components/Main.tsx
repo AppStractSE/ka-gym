@@ -1,11 +1,13 @@
-"use client";
-import { useHeaderHeight } from "@/utils/headerHeight";
 import { ReactNode } from "react";
+import ScrollToTop from "./ScrollToTop";
 
 const Main = ({ children }: { children: ReactNode }) => {
-  // const { headerHeight } = useHeaderHeight();
-
-  return <main>{children}</main>;
+  return (
+    <main className="relative">
+      {children}
+      <ScrollToTop />
+    </main>
+  );
 };
 
 export default Main;
