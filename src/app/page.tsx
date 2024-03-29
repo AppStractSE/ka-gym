@@ -5,7 +5,7 @@ import { LuChevronRight } from "react-icons/lu";
 export default function Home() {
   return (
     <>
-      <section className="relative flex min-h-[65vh] w-full items-end px-4 md:min-h-[85vh]">
+      <section className="relative flex min-h-[65vh] w-full items-end px-4 md:min-h-[90vh]">
         <div className="absolute inset-0">
           <HeaderSwiper />
         </div>

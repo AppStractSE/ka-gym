@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { GrPauseFill, GrPlayFill } from "react-icons/gr";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
@@ -11,7 +12,7 @@ const HeaderSwiper = ({ children }: any) => {
   const PlayButton = () => {
     return (
       <div
-        className="cursor-pointer text-vanilla-powder-500 hover:text-vanilla-powder-700"
+        className="cursor-pointer text-2xl text-vanilla-powder-500 hover:text-vanilla-powder-700"
         onClick={handlePauseSlider}
       >
         {pauseSlider ? <GrPlayFill /> : <GrPauseFill />}
@@ -46,24 +47,69 @@ const HeaderSwiper = ({ children }: any) => {
           clickable: true,
         }}
         modules={[Pagination, EffectFade, Autoplay]}
-        className="relative w-full h-full"
+        className="relative h-full w-full"
       >
-        <SwiperSlide className="bg-[url('/hero-header.png')] bg-cover bg-bottom">
-          <div className="inset-0 overlay" />
+        <SwiperSlide>
+          <Image
+            src="/hero-header.png"
+            alt="Hero header"
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+            data-loaded="false"
+            onLoad={(event) => {
+              event.currentTarget.setAttribute("data-loaded", "true");
+            }}
+            className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
+          />
+          <div className="overlay inset-0" />
         </SwiperSlide>
-
-        <SwiperSlide className="bg-[url('/dumbbellroom.png')] bg-cover bg-center">
-          <div className="inset-0 overlay" />
+        <SwiperSlide>
+          <Image
+            src="/dumbbellroom.png"
+            alt="Hero header"
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+            data-loaded="false"
+            onLoad={(event) => {
+              event.currentTarget.setAttribute("data-loaded", "true");
+            }}
+            className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
+          />
+          <div className="overlay inset-0" />
         </SwiperSlide>
-
-        <SwiperSlide className="bg-[url('/squatrack.png')] bg-cover bg-center">
-          <div className="inset-0 overlay" />
+        <SwiperSlide>
+          <Image
+            src="/squatrack.png"
+            alt="Hero header"
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+            data-loaded="false"
+            onLoad={(event) => {
+              event.currentTarget.setAttribute("data-loaded", "true");
+            }}
+            className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
+          />
+          <div className="overlay inset-0" />
         </SwiperSlide>
-
-        <SwiperSlide className="bg-[url('/bench.png')] bg-cover bg-center">
-          <div className="inset-0 overlay" />
+        <SwiperSlide>
+          <Image
+            src="/bench.png"
+            alt="Hero header"
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+            data-loaded="false"
+            onLoad={(event) => {
+              event.currentTarget.setAttribute("data-loaded", "true");
+            }}
+            className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
+          />
+          <div className="overlay inset-0" />
         </SwiperSlide>
-        <div className="absolute z-50 right-10 top-10">
+        <div className="absolute bottom-[5%] right-[2.5%] z-50">
           <PlayButton />
         </div>
       </Swiper>

@@ -39,7 +39,7 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="header">
+      <header className={`font-normal header transition-all ease-in-out duration-500 ${scroll ? "bg-vanilla-powder-500 text-night-500" : "bg-transparent text-vanilla-powder-500"}`}>
         <div>
           <Link href={"/"} className="mr-12">
             <h1 className="text-3xl tracking-tight md:text-4xl">
@@ -51,7 +51,7 @@ const Navigation = () => {
               <Link
                 key={navItem.label}
                 href={navItem.href}
-                className={`px-2 py-2 text-sm font-normal decoration-2 underline-offset-[6px] hover:underline md:px-6 md:py-4 md:text-base lg:text-lg ${pathname === navItem.href ? "underline" : "text-night-500"}`}
+                className={`px-2 py-2 text-sm decoration-2 underline-offset-[6px] hover:underline md:px-6 md:py-4 md:text-base lg:text-lg ${pathname === navItem.href ? "underline" : ""}`}
               >
                 {navItem.label}
               </Link>

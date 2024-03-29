@@ -18,7 +18,7 @@ body {
       @apply flex items-center justify-between max-w-6xl mx-auto;
     }
 
-    @apply fixed top-0 w-full border-b bg-vanilla-powder-500 px-4 text-night-500 shadow-md z-[9999];
+    @apply fixed top-0 w-full px-4 z-[9999];
   }
 
   .contactform {
@@ -27,7 +27,7 @@ body {
 
   .overlay {
     @apply absolute inset-0;
-    background: radial-gradient(circle, rgba(24, 24, 26, 0.45) 0%, rgba(35, 49, 56, 0.65) 100%);
+    background: radial-gradient(circle, rgba(14, 14, 57, 0.25) 0%, rgba(33, 21, 92, 0.25) 100%);
   }
 }
 
@@ -37,9 +37,9 @@ body {
 
   .swiper-pagination-bullet {
     --swiper-pagination-bullet-border-radius: 2px;
-    @apply w-2.5 h-2.5 bg-vanilla-powder-800 opacity-100;
+    @apply w-2.5 h-2.5 bg-night-800 opacity-100;
     border-radius: var(--swiper-pagination-bullet-border-radius);
-    transition: all ease 1s;
+    transition: all ease-in-out .5s;
   }
 
   .swiper-pagination-bullet-active {
