@@ -12,12 +12,12 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {footerData.map((link) => (
               <div key={link.label}>
-                <h2 className="mb-2 text-lg md:text-xl">
+                <h2 className="mb-2 text-2xl md:text-2xl">
                   {link.label}
                 </h2>
                 <ul className="space-y-1">
                   {link.links.map((link) => (
-                    <li key={link.label} className="text-sm md:text-base">
+                    <li key={link.label} className="text-lg md:text-xl">
                       {link.internal ? (
                         <Link
                           href={link.href}
@@ -63,14 +63,14 @@ const Footer = () => {
           <a
             href="https://appstract.se/"
             target="_blank"
-            className="flex items-center gap-1 mb-2 text-xs opacity-50 w-fit text-vanilla-powder-400 hover:underline sm:text-center"
+            className="flex items-center gap-1 mb-2 text-base opacity-50 w-fit text-vanilla-powder-400 hover:underline sm:text-center"
           >
             Webbdesign av appstract © 2024
           </a>
           <div className="flex items-center gap-1">
             <Link
               href="/antidopingpolicy"
-              className="text-sm hover:underline hover:underline-offset-4"
+              className="text-base hover:underline hover:underline-offset-4"
             >
               Antidopingpolicy
             </Link>
@@ -79,7 +79,7 @@ const Footer = () => {
             </span>
             <Link
               href="/integritetspolicy"
-              className="text-sm hover:underline hover:underline-offset-4"
+              className="text-base hover:underline hover:underline-offset-4"
             >
               Integritetspolicy
             </Link>

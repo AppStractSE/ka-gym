@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface Props {
 export default function Drawer({ children, showDrawer, setShowDrawer }: Props) {
   return (
     <div
-      className={`fixed inset-0 z-10 transform overflow-hidden bg-gray-900 bg-opacity-25 ease-in-out
+      className={`fixed inset-0 z-[999999] transform overflow-hidden bg-gray-900 bg-opacity-25 ease-in-out
         ${
           showDrawer
             ? "translate-x-0 opacity-100 transition-opacity duration-500"
@@ -24,7 +24,11 @@ export default function Drawer({ children, showDrawer, setShowDrawer }: Props) {
         <div className="relative flex h-full w-screen max-w-sm flex-col space-y-6 overflow-y-scroll pb-10">
           <div className="flex">
             <div className="mr-auto p-4 text-lg font-bold">
-              <Image src="/logo.png" alt="" width={80} height={80} />
+            <Link href={"/"} className="mr-12">
+            <h1 className="text-3xl tracking-tight md:text-4xl">
+              Karl-Alfred Gym
+            </h1>
+          </Link>
             </div>
             <button
               onClick={() => setShowDrawer(!showDrawer)}

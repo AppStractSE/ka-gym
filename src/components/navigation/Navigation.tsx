@@ -4,7 +4,7 @@ import { useScroll } from "@/utils/useScroll";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { LuMenu } from "react-icons/lu";
+import { TbMenuDeep } from "react-icons/tb";
 import MobileMenuDrawer from "./MobileMenuDrawer";
 import { navigation } from "./data";
 
@@ -45,9 +45,9 @@ const Navigation = () => {
           <div className="ml-auto block sm:hidden">
             <button
               onClick={() => setShowDrawer(!showDrawer)}
-              className="m-2 -mr-2.5 block rounded p-2 text-3xl text-night-500 hover:text-sky-700"
+              className={`m-2 -mr-2.5 block rounded p-2 text-3xl transition-all duration-500 ease-in-out ${scroll ? "text-night-400 hover:text-night-800" : "text-vanilla-powder-500"}`}
             >
-              <LuMenu />
+              <TbMenuDeep />
             </button>
           </div>
         </div>
