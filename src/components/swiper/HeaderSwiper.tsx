@@ -1,40 +1,10 @@
-"use client";
 import Image from "next/image";
-import { useRef, useState } from "react";
-import { GrPauseFill, GrPlayFill } from "react-icons/gr";
+import { forwardRef } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
-const HeaderSwiper = ({ children }: any) => {
-  const swiperRefLocal = useRef<any>(null);
-  const [pauseSlider, setPauseSlider] = useState(false);
-
-  const PlayButton = () => {
-    return (
-      <div
-        className="cursor-pointer rounded-md bg-night-600 p-2 text-2xl text-vanilla-powder-500 opacity-75 hover:opacity-100"
-        onClick={handlePauseSlider}
-      >
-        {pauseSlider ? <GrPlayFill /> : <GrPauseFill />}
-      </div>
-    );
-  };
-
-  const handlePauseSlider = () => {
-    if (swiperRefLocal.current) {
-      if (pauseSlider) {
-        swiperRefLocal.current.swiper.autoplay.start();
-        setPauseSlider(false);
-      } else {
-        swiperRefLocal.current.swiper.autoplay.stop();
-        setPauseSlider(true);
-      }
-      console.log(swiperRefLocal.current.swiper);
-    }
-    console.log("yes");
-  };
-
+const HeaderSwiper = forwardRef<SwiperRef>((_, ref) => {
   const images = [
     "/hero-header.png",
     "/dumbbellroom.png",
@@ -45,7 +15,7 @@ const HeaderSwiper = ({ children }: any) => {
   return (
     <>
       <Swiper
-        ref={swiperRefLocal}
+        ref={ref}
         autoplay={{
           delay: 5000,
         }}
@@ -61,7 +31,7 @@ const HeaderSwiper = ({ children }: any) => {
           prevEl: ".swiper-button-prev",
         }}
         modules={[Pagination, EffectFade, Autoplay, Navigation]}
-        className="relative h-full w-full"
+        className="relative w-full h-full"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
@@ -78,7 +48,7 @@ const HeaderSwiper = ({ children }: any) => {
               }}
               className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
             />
-            <div className="overlay inset-0" />
+            <div className="inset-0 overlay" />
           </SwiperSlide>
         ))}
 
@@ -95,13 +65,11 @@ const HeaderSwiper = ({ children }: any) => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-8 right-[2.5%] z-[9999]">
-          <PlayButton />
-        </div>
       </Swiper>
-      {children}
     </>
   );
-};
+});
+
+HeaderSwiper.displayName = "HeaderSwiper";
 
 export default HeaderSwiper;
