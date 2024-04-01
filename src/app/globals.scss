@@ -22,7 +22,7 @@ body {
   }
 
   .contactform {
-    @apply text-night-500 block w-full rounded-md bg-vanilla-powder-500 p-4 text-xs placeholder-gray-500 shadow-lg outline-2 focus:outline focus:outline-[#0077a7] md:text-sm;
+    @apply text-night-500 block w-full rounded-md bg-vanilla-powder-500 outline outline-1 outline-gray-500 p-4 text-xs placeholder-gray-500 focus:outline focus:outline-sky-500 md:text-sm;
   }
 
   .overlay {
@@ -48,10 +48,6 @@ body {
   }
 }
 
-.swiper {
-  overflow: unset;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
   @apply cursor-pointer text-vanilla-powder-500 rounded opacity-75 hover:opacity-100;
@@ -61,45 +57,32 @@ h1,
 h2,
 h3,
 h4,
+button,
 a {
   font-family: var(--font-bebas-neue);
 }
 
-.autoplay-progress {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 10;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: var(--swiper-theme-color);
-}
-
-.autoplay-progress svg {
-  --progress: 0;
-  position: absolute;
-  left: 0;
-  top: 0px;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  stroke-width: 4px;
-  stroke: var(--swiper-theme-color);
-  fill: none;
-  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-  stroke-dasharray: 125.6;
-  transform: rotate(-90deg);
-}
-
 .scroll-to-top {
-  @apply hidden fixed bottom-8 right-[1%] 2xl:right-[2.5%] z-[99999] hidden cursor-pointer rounded-xl bg-vanilla-powder-300 p-2 text-2xl text-night-700 mix-blend-difference transition-all duration-500;
+  @apply hidden fixed bottom-8 right-[1%] 2xl:right-[2.5%] z-[99999] cursor-pointer rounded-xl bg-vanilla-powder-300 p-2 text-2xl text-night-700 mix-blend-difference transition-all duration-500;
 
   @media screen and (min-width: 1340px) {
     @apply block;
 
+  }
+}
+
+.swiper-slide-thumb-active {
+  opacity: 1 !important;
+
+  img {
+    @apply rounded-lg;
+  }
+}
+
+.swiper-thumbs>.swiper-wrapper>.swiper-slide {
+  @apply opacity-75 duration-200 transition-all cursor-pointer;
+
+  &:hover {
+    @apply opacity-100;
   }
 }

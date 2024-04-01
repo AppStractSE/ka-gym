@@ -27,7 +27,7 @@ const Navigation = () => {
       >
         <div>
           <Link href={"/"} className="mr-12">
-            <h1 className="text-3xl tracking-tight md:text-4xl">
+            <h1 className="text-xl tracking-tight md:text-4xl">
               Karl-Alfred Gym
             </h1>
           </Link>
@@ -45,7 +45,7 @@ const Navigation = () => {
           <div className="ml-auto block sm:hidden">
             <button
               onClick={() => setShowDrawer(!showDrawer)}
-              className={`m-2 -mr-2.5 block rounded p-2 text-3xl transition-all duration-500 ease-in-out ${scroll ? "text-night-400 hover:text-night-800" : "text-vanilla-powder-500"}`}
+              className={`m-2 -mr-2.5 block rounded p-2 text-xl transition-all duration-500 ease-in-out ${scroll ? "text-night-400 hover:text-night-800" : "text-vanilla-powder-500"}`}
             >
               <TbMenuDeep />
             </button>

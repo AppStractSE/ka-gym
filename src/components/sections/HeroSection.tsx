@@ -30,7 +30,7 @@ const HeroSection = () => {
             Borås äldsta hardcoregym
           </h1>
 
-          <h6 className="font-base font-medium text-vanilla-powder-500 md:w-1/2 md:text-xl">
+          <h6 className="font-base max-w-sm font-medium text-vanilla-powder-500 md:max-w-lg md:text-xl">
             Sedan 1980 har vårt gym varit en fristad för de som vet att äkta
             framsteg kräver hårt arbete och beslutsamhet.
           </h6>
