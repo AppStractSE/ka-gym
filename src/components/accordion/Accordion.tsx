@@ -16,7 +16,7 @@ const Accordion = ({ title, content }: Props) => {
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-2xl font-regular md:text-3xl">{title}</h3>
+        <h3 className="text-xl font-regular md:text-3xl">{title}</h3>
         <div
           className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         >
