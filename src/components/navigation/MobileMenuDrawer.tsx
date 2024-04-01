@@ -26,7 +26,7 @@ const MobileMenuItem = ({
       <Link
         onClick={() => setShowDrawer(!showDrawer)}
         href={navItem.href}
-        className={`block px-4 py-2 text-lg font-semibold decoration-2 underline-offset-[6px] transition-all duration-200 hover:underline ${currentPage === navItem.href ? "underline" : ""}`}
+        className={`block px-4 py-2 text-lg decoration-2 underline-offset-[6px] transition-all duration-200 hover:underline ${currentPage === navItem.href ? "underline" : ""}`}
       >
         {navItem.label}
       </Link>

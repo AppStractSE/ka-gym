@@ -6,18 +6,18 @@ import { footerData } from "./data";
 
 const Footer = () => {
   return (
-    <footer className="shadow-t w-full border-t bg-gradient-to-b from-night-600 to-night-500 px-4 text-vanilla-powder-500 shadow-md">
-      <div className="mx-auto max-w-6xl pb-4 pt-8">
+    <footer className="w-full px-4 border-t shadow-md shadow-t bg-gradient-to-b from-night-600 to-night-500 text-vanilla-powder-500">
+      <div className="max-w-6xl pt-8 pb-4 mx-auto">
         <div className="flex items-start justify-between md:items-center">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {footerData.map((link) => (
               <div key={link.label}>
-                <h2 className="mb-2 text-lg font-semibold md:text-xl">
+                <h2 className="mb-2 text-2xl md:text-2xl">
                   {link.label}
                 </h2>
                 <ul className="space-y-1">
                   {link.links.map((link) => (
-                    <li key={link.label} className="text-sm md:text-base">
+                    <li key={link.label} className="text-lg md:text-xl">
                       {link.internal ? (
                         <Link
                           href={link.href}
@@ -63,14 +63,14 @@ const Footer = () => {
           <a
             href="https://appstract.se/"
             target="_blank"
-            className="mb-2 flex w-fit items-center gap-1 text-xs text-vanilla-powder-400 opacity-50 hover:underline sm:text-center"
+            className="flex items-center gap-1 mb-2 text-base opacity-50 w-fit text-vanilla-powder-400 hover:underline sm:text-center"
           >
             Webbdesign av appstract © 2024
           </a>
           <div className="flex items-center gap-1">
             <Link
               href="/antidopingpolicy"
-              className="text-sm hover:underline hover:underline-offset-4"
+              className="text-base hover:underline hover:underline-offset-4"
             >
               Antidopingpolicy
             </Link>
@@ -79,7 +79,7 @@ const Footer = () => {
             </span>
             <Link
               href="/integritetspolicy"
-              className="text-sm hover:underline hover:underline-offset-4"
+              className="text-base hover:underline hover:underline-offset-4"
             >
               Integritetspolicy
             </Link>

@@ -6,6 +6,9 @@ const config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "bebas-neue": "var(--font-bebas-neue)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -27,7 +30,7 @@ const config = {
           800: "#656665",
           900: "#333332",
         },
-        "night": {
+        night: {
           100: "#d0d0d0",
           200: "#a1a1a1",
           300: "#727371",
@@ -50,8 +53,8 @@ const config = {
           600: "#006086",
           700: "#004865",
           800: "#003043",
-          900: "#001822"
-},
+          900: "#001822",
+        },
       },
     },
   },
