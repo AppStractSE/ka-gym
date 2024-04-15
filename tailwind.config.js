@@ -6,6 +6,9 @@ const config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "bebas-neue": "var(--font-bebas-neue)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -26,6 +29,31 @@ const config = {
           700: "#989997",
           800: "#656665",
           900: "#333332",
+        },
+        night: {
+          100: "#d0d0d0",
+          200: "#a1a1a1",
+          300: "#727371",
+          400: "#434442",
+          500: "#141513",
+          600: "#10110f",
+          700: "#0c0d0b",
+          800: "#080808",
+          900: "#040404",
+        },
+        "ka-red": {
+          100: "#ba2328",
+        },
+        blue: {
+          100: "#cce4ee",
+          200: "#99c9dc",
+          300: "#66aecb",
+          400: "#3393b9",
+          500: "#0078a8",
+          600: "#006086",
+          700: "#004865",
+          800: "#003043",
+          900: "#001822",
         },
       },
     },

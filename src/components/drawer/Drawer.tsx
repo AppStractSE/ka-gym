@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 
 interface Props {
@@ -10,25 +10,28 @@ interface Props {
 export default function Drawer({ children, showDrawer, setShowDrawer }: Props) {
   return (
     <div
-      className={`fixed inset-0 z-10 transform overflow-hidden bg-gray-900 bg-opacity-25 ease-in-out
+      className={`fixed inset-0 z-[999999] transform overflow-hidden bg-gray-900 bg-opacity-25 duration-500 ease-in-out
         ${
           showDrawer
-            ? "translate-x-0 opacity-100 transition-opacity duration-500"
-            : "translate-x-full opacity-0 transition-all delay-500"
+            ? "translate-x-0 opacity-100 transition-opacity"
+            : "invisible opacity-0 transition-all delay-500"
         }`}
     >
       <div
-        className={`delay-400 bg-vanilla-powder-500 absolute right-0 h-full w-screen max-w-sm transform text-black shadow-xl transition-all duration-500 ease-in-out
+        className={`absolute right-0 h-full w-screen max-w-md transform bg-vanilla-powder-500 text-night-500 shadow-xl transition-all duration-500 ease-in-out sm:max-w-sm
           ${showDrawer ? "translate-x-0" : " translate-x-full"}`}
       >
-        <div className="relative flex h-full w-screen max-w-sm flex-col space-y-6 overflow-y-scroll pb-10">
-          <div className="flex">
-            <div className="mr-auto p-4 text-lg font-bold">
-              <Image src="/logo.png" alt="" width={80} height={80} />
-            </div>
+        <div className="relative flex flex-col space-y-6 overflow-y-scroll">
+          <div className="flex items-center justify-between p-4">
+            <Link
+              href={"/"}
+              className="text-4xl font-normal tracking-tight md:text-4xl"
+            >
+              Karl-Alfred Gym
+            </Link>
             <button
               onClick={() => setShowDrawer(!showDrawer)}
-              className="m-2 text-3xl hover:text-cyan-500"
+              className="text-3xl text-night-200 hover:text-night-700"
             >
               <IoMdClose />
             </button>

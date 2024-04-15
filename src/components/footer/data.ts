@@ -12,16 +12,11 @@ interface FooterLink {
 
 export const footerData: FooterLink[] = [
   {
-    label: "Länkar",
+    label: "Karl-Alfred Gym",
     links: [
       {
-        label: "Träna",
-        href: "/trana",
-        internal: true,
-      },
-      {
-        label: "Prislista",
-        href: "/prislista",
+        label: "Bli medlem",
+        href: "/bli-medlem",
         internal: true,
       },
       {
@@ -29,16 +24,10 @@ export const footerData: FooterLink[] = [
         href: "/vart-gym",
         internal: true,
       },
-      {
-        label: "100% Ren Hårdträning",
-        href: "https://www.renhardtraning.com/",
-        internal: false,
-        icon: true,
-      },
     ],
   },
   {
-    label: "Här finns vi",
+    label: "Kontakt",
     links: [
       {
         label: "Vindelgatan 25B, 504 65 Borås",

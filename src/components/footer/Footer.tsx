@@ -1,19 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
+import stampPic from "public/karlalfred.png";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { footerData } from "./data";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-4 text-black border-t shadow-md shadow-t bg-vanilla-powder-500">
-      <div className="py-12 mx-auto max-w-8xl">
-        <div className="flex justify-between">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-6">
+    <footer className="w-full px-4 border-t shadow-md shadow-t bg-gradient-to-b from-night-600 to-night-500 text-vanilla-powder-500">
+      <div className="max-w-6xl pt-8 pb-4 mx-auto">
+        <div className="flex items-start justify-between md:items-center">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {footerData.map((link) => (
               <div key={link.label}>
-                <h2 className="mb-6 text-xl font-semibold">{link.label}</h2>
-                <ul className="space-y-2">
+                <h2 className="mb-2 text-2xl md:text-2xl">
+                  {link.label}
+                </h2>
+                <ul className="space-y-1">
                   {link.links.map((link) => (
-                    <li key={link.label} className="text-base md:text-lg">
+                    <li key={link.label} className="text-lg md:text-xl">
                       {link.internal ? (
                         <Link
                           href={link.href}
@@ -25,7 +29,7 @@ const Footer = () => {
                         <a
                           href={link.href}
                           target="_blank"
-                          className="flex items-center gap-1 hover:underline hover:underline-offset-4"
+                          className="inline-flex items-center gap-1 hover:underline hover:underline-offset-4"
                         >
                           {link.label}
                           {link.icon ? (
@@ -43,32 +47,43 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          <div className="space-y-8">
+          <div className="">
             <Link href="/">
-              <img
-                src="/popeye.png"
-                alt="Karl Alfred Gym"
-                className="w-40 h-auto"
+              <Image
+                alt="Karl-Alfreds Gym stämpellogga"
+                src={stampPic}
+                sizes="100vw"
+                className="max-h-[110px] w-auto sm:max-h-[200px]"
               />
             </Link>
           </div>
         </div>
-
-        <div className="my-6 h-[1px] w-full bg-black opacity-25 sm:mx-auto lg:my-8" />
-        <div className="flex items-center justify-between">
+        <div className="my-6 h-[1px] w-full bg-night-500 opacity-25 sm:mx-auto lg:my-8" />
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <a
             href="https://appstract.se/"
             target="_blank"
-            className="flex items-center gap-1 text-xs text-black opacity-50 w-fit hover:underline sm:text-center"
+            className="flex items-center gap-1 mb-2 text-base opacity-50 w-fit text-vanilla-powder-400 hover:underline sm:text-center"
           >
             Webbdesign av appstract © 2024
           </a>
-          <Link
-            href="/integritetspolicy"
-            className="text-sm hover:underline hover:underline-offset-4"
-          >
-            Integritetspolicy
-          </Link>
+          <div className="flex items-center gap-1">
+            <Link
+              href="/antidopingpolicy"
+              className="text-base hover:underline hover:underline-offset-4"
+            >
+              Antidopingpolicy
+            </Link>
+            <span>
+              <small>•</small>
+            </span>
+            <Link
+              href="/integritetspolicy"
+              className="text-base hover:underline hover:underline-offset-4"
+            >
+              Integritetspolicy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

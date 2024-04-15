@@ -1,22 +1,12 @@
 export interface NavItem {
   href: string;
   label: string;
-  dropdownItems?: DropdownItem[];
-}
-
-export interface DropdownItem {
-  href: string;
-  label: string;
 }
 
 export const navigation: NavItem[] = [
   {
-    href: "/trana",
-    label: "Träna",
-  },
-  {
-    href: "/prislista",
-    label: "Prislista",
+    href: "/bli-medlem",
+    label: "Bli medlem",
   },
   {
     href: "/vart-gym",
