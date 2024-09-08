@@ -1,3 +1,5 @@
+import ContactSection from "@/components/sections/ContactSection";
+import FAQSection from "@/components/sections/FAQSection";
 import HeroSection from "@/components/sections/HeroSection";
 import Link from "next/link";
 import { LuChevronRight } from "react-icons/lu";
@@ -6,7 +8,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
           <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/hero-header.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
             <div className="absolute inset-0 bg-black bg-opacity-50" />
@@ -46,11 +48,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 items-center overflow-hidden rounded-xl bg-vanilla-powder-600 md:grid-cols-3">
-            <div className="col-span-1">
-              <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
+            <div className="col-span-1 h-full">
+              <img
+                src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e"
+                className="h-full object-cover"
+              />
             </div>
             <div className="col-span-2 p-6 text-night-500 md:p-12">
               <div>
@@ -79,6 +84,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ContactSection />
+      <FAQSection />
     </>
   );
 }
