@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 interface IContactForm {
   FullName: string;
   Email: string;
-  BusinessName: string;
   PhoneNumber: string;
   Message: string;
 }
@@ -20,7 +19,6 @@ const ContactForm = () => {
     defaultValues: {
       FullName: "",
       Email: "",
-      BusinessName: "",
       PhoneNumber: "",
       Message: "",
     },
@@ -30,7 +28,6 @@ const ContactForm = () => {
     const formData = {
       "form-name": "contact-form",
       name: data.FullName,
-      business: data.BusinessName,
       email: data.Email,
       tel: data.PhoneNumber,
       message: data.Message,
@@ -46,22 +43,17 @@ const ContactForm = () => {
       .then(() => reset());
   };
 
-  const baseClasses =
-    " text-[#f5cea4] text-base focus-visible:placeholder:text-[#f5cea4] placeholder:text-[#8B7257] bg-[#303030] w-full p-4 rounded-sm focus:outline-none focus-visible:outline-[#8B7257] font-thin tracking-widest ring-0 focus-visible:outline-1 focus-visible:text-[#f5cea4] focus-visible:outline-offset-0 focus:bg-[#3f3f3f] transition-all duration-500 ease-in-out ";
+  const baseClasses = "contactform ";
 
   const errorClass =
     " outline outline-1 outline-offset-0 outline-red-700 placeholder:text-red-500 ";
   const errorTextBaseClass =
-    " text-red-500 text-xs font-thin tracking-widest transition-all duration-500 ease-in-out ";
+    " text-red-500 text-xs tracking-widest transition-all duration-500 ease-in-out ";
   const errorTextHiddenClasses = " opacity-0 max-h-0 ";
   const errorTextVisibleClasses = " mt-2 mb-6 opacity-100 max-h-full ";
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto"
-      name="contact-form"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} name="contact-form">
       <input type="hidden" name="required-field" value="contact-form" />
       <div className="mb-3 w-full">
         <input
@@ -69,16 +61,16 @@ const ContactForm = () => {
             .concat(" ")
             .concat(errors["FullName"] ? errorClass : "")}
           type="text"
-          placeholder=""
+          placeholder="För- och efternamn *"
           {...register("FullName", {
-            required: "",
+            required: "Fullständigt namn krävs",
             minLength: {
               value: 2,
-              message: "",
+              message: "Namnet måste vara minst 2 tecken",
             },
             maxLength: {
               value: 50,
-              message: "",
+              message: "Namnet får vara högst 50 tecken",
             },
           })}
         />
@@ -95,54 +87,34 @@ const ContactForm = () => {
           {errors.FullName?.message}
         </p>
       </div>
-      <div className="mb-3 w-full">
-        <input
-          className={baseClasses
-            .concat(" ")
-            .concat(errors["Email"] ? errorClass : "")}
-          type="email"
-          placeholder=""
-          {...register("Email", {
-            required: "",
-            pattern: {
-              value:
-                /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-              message: "",
-            },
-          })}
-        />
-        <p
-          role="alert"
-          className={errorTextBaseClass
-            .concat(" ")
-            .concat(
-              errors["Email"]
-                ? errorTextVisibleClasses
-                : errorTextHiddenClasses,
-            )}
-        >
-          {errors.Email?.message}
-        </p>
-      </div>
       <div className="flex gap-3">
         <div className="mb-3 w-full">
           <input
-            type="text"
-            className={baseClasses}
-            placeholder="Business name"
-            {...register("BusinessName", {})}
+            className={baseClasses
+              .concat(" ")
+              .concat(errors["Email"] ? errorClass : "")}
+            type="email"
+            placeholder="Email *"
+            {...register("Email", {
+              required: "E-post krävs",
+              pattern: {
+                value:
+                  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                message: "Ogiltig e-postadress",
+              },
+            })}
           />
           <p
             role="alert"
             className={errorTextBaseClass
               .concat(" ")
               .concat(
-                errors["BusinessName"]
+                errors["Email"]
                   ? errorTextVisibleClasses
                   : errorTextHiddenClasses,
               )}
           >
-            {errors.BusinessName?.message}
+            {errors.Email?.message}
           </p>
         </div>
         <div className="w-full">
@@ -151,23 +123,23 @@ const ContactForm = () => {
               .concat(" ")
               .concat(errors["PhoneNumber"] ? errorClass : "")}
             type="tel"
-            placeholder="Phone number"
+            placeholder="Telefonnummer"
             {...register("PhoneNumber", {
               onChange: (e) => {
                 e.target.value = e.target.value.replace(/[^0-9]/g, "");
               },
-              required: "",
+              required: "Telefonnummer krävs",
               pattern: {
                 value: /^[0-9]+$/,
-                message: "",
+                message: "Ange ett nummer",
               },
               minLength: {
                 value: 10,
-                message: "",
+                message: "Telefonnumret måste vara minst 10 tecken",
               },
               maxLength: {
                 value: 15,
-                message: "",
+                message: "Telefonnumret får vara högst 15 tecken",
               },
             })}
           />
@@ -188,21 +160,21 @@ const ContactForm = () => {
       <div className="mb-3">
         <textarea
           maxLength={500}
-          placeholder="Message"
-          className={"h-32 resize-none focus-visible:h-64"
+          placeholder="Meddelande *"
+          className={"contactform min-h-[150px] resize-none transition-all duration-200 ease-in-out focus-visible:min-h-[200px]"
             .concat(" ")
             .concat(baseClasses)
             .concat(" ")
             .concat(errors["Message"] ? errorClass : "")}
           {...register("Message", {
-            required: "",
+            required: "Meddelande krävs",
             minLength: {
               value: 10,
-              message: "",
+              message: "Meddelandet måste vara minst 10 tecken",
             },
             maxLength: {
               value: 500,
-              message: "",
+              message: "Meddelandet får vara högst 500 tecken",
             },
           })}
         ></textarea>
@@ -221,10 +193,11 @@ const ContactForm = () => {
       </div>
       <button
         // disabled={!isDirty || !isValid}
+
         type="submit"
-        className="hover:bg-gold flex w-full items-center justify-center rounded-sm bg-[#8B7257] p-4 text-center text-base leading-normal tracking-[0.15em] text-[#303030] transition-all duration-200 ease-in-out"
+        className="contactform font-base font-medium hover:bg-night-500 hover:text-vanilla-powder-500"
       >
-        Submit
+        Skicka
       </button>
     </form>
   );
