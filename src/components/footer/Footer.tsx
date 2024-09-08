@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import stampPic from "public/karlalfred.png";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { footerData } from "./data";
 
@@ -49,8 +48,10 @@ const Footer = () => {
             <Link href="/">
               <Image
                 alt="Karl-Alfreds Gym stämpellogga"
-                src={stampPic}
+                src="/karlalfred.png"
                 sizes="100vw"
+                width={100}
+                height={100}
                 className="max-h-[110px] w-auto sm:max-h-[200px]"
               />
             </Link>
