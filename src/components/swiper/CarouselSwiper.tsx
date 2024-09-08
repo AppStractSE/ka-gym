@@ -24,7 +24,7 @@ const CarouselSwiper = () => {
   ];
   return (
     <>
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4">
         <div className="mx-auto max-w-6xl">
           {/* <h4 className="mb-2 text-2xl font-medium text-night-500 md:text-4xl">
             Bildgalleri

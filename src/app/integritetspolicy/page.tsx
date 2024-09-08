@@ -5,7 +5,7 @@ const page = () => {
   return (
     <>
       <SubpageHeader title="Integritetspolicy" image="bg-[url('/row.png')]" />
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4">
         <div className="mx-auto max-w-6xl py-8 lg:py-12">
           {IntegrityPolicyQuestions.map((question, index) => (
             <div className="md:max-w-xl" key={question.question}>
@@ -19,7 +19,7 @@ const page = () => {
           ))}
         </div>
       </section>
-      {/* <section className="w-full px-4 my-6">
+      {/* <section className="w-full px-4 my-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center gap-4 md:flex-row">
             <div className="px-4 py-8 rounded-md basis-1/2 bg-vanilla-powder-600 lg:px-8 lg:py-12">

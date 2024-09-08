@@ -8,7 +8,7 @@ const page = () => {
     <>
       <SubpageHeader title="Vårt gym" image="bg-[url('/legpress.png')]" />
       <CarouselSwiper />
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 items-center overflow-hidden rounded-xl bg-vanilla-powder-600 md:grid-cols-3">
             <div className="col-span-1">

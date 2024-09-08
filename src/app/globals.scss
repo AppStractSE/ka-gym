@@ -38,13 +38,13 @@ body {
 
   .swiper-pagination-bullet {
     --swiper-pagination-bullet-border-radius: 2px;
-    @apply w-2.5 h-2.5 bg-vanilla-powder-500 opacity-100;
+    @apply w-2.5 h-1.5 bg-slate-400 opacity-100;
     border-radius: var(--swiper-pagination-bullet-border-radius);
     transition: all ease-in-out .5s;
   }
 
   .swiper-pagination-bullet-active {
-    @apply bg-sky-500 opacity-100;
+    @apply bg-vanilla-powder-500 opacity-100 w-5;
   }
 }
 

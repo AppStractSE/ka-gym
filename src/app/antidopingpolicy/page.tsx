@@ -4,7 +4,7 @@ const page = () => {
   return (
     <>
       <SubpageHeader title="Antidopingpolicy" image="bg-[url('/cardio.png')]" />
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4">
         <div className="mx-auto max-w-6xl rounded-md bg-ka-red-100 px-4 py-8 lg:px-8 lg:py-12">
           <div className="flex flex-col-reverse items-center justify-between gap-4 md:flex-row md:gap-8">
             <div className="md:max-w-lg">

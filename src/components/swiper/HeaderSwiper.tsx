@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { forwardRef } from "react";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 
 const HeaderSwiper = forwardRef<SwiperRef>((_, ref) => {
@@ -25,13 +24,10 @@ const HeaderSwiper = forwardRef<SwiperRef>((_, ref) => {
         loop={true}
         pagination={{
           el: ".swiper-pagination",
+          clickable: true,
         }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        modules={[Pagination, EffectFade, Autoplay, Navigation]}
-        className="relative w-full h-full"
+        modules={[Pagination, EffectFade, Autoplay]}
+        className="relative h-full w-full"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
@@ -48,21 +44,13 @@ const HeaderSwiper = forwardRef<SwiperRef>((_, ref) => {
               }}
               className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/10"
             />
-            <div className="inset-0 overlay" />
+            <div className="overlay inset-0" />
           </SwiperSlide>
         ))}
 
         <div className="absolute bottom-8 left-0 right-0 z-[999] mx-auto w-fit">
-          <div className="flex items-center gap-0.5">
-            <div className="swiper-button-prev">
-              <HiChevronLeft />
-            </div>
-            <div>
-              <div className="swiper-pagination"></div>
-            </div>
-            <div className="swiper-button-next">
-              <HiChevronRight />
-            </div>
+          <div>
+            <div className="swiper-pagination"></div>
           </div>
         </div>
       </Swiper>
