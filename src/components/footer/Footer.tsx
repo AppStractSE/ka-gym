@@ -5,8 +5,8 @@ import { footerData } from "./data";
 
 const Footer = () => {
   return (
-    <footer className="shadow-t w-full border-t bg-gradient-to-b from-night-600 to-night-500 px-4 text-vanilla-powder-500 shadow-md">
-      <div className="mx-auto max-w-6xl pb-4 pt-8">
+    <footer className="w-full bg-gradient-to-b from-night-600 to-night-500 px-4 text-vanilla-powder-500">
+      <div className="mx-auto max-w-6xl pb-12 pt-8 md:pb-4">
         <div className="flex items-start justify-between md:items-center">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {footerData.map((link) => (

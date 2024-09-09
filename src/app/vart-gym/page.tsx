@@ -1,12 +1,46 @@
 import SubpageHeader from "@/components/sections/SubpageHeader";
 import CarouselSwiper from "@/components/swiper/CarouselSwiper";
 import Link from "next/link";
+import { FaRegCircleCheck } from "react-icons/fa6";
 import { LuChevronRight } from "react-icons/lu";
 
 const page = () => {
+  const data = [
+    "Hantlar upp till 73kg",
+    "Tävlingsbänk",
+    "Löpband",
+    "Crosstrainer",
+    "Stationär cykel",
+    "Träningsredskap",
+    "Ski-erg",
+    "Power rack",
+  ];
   return (
     <>
       <SubpageHeader title="Vårt gym" image="bg-[url('/legpress.png')]" />
+      <section className="my-12 w-full px-4 md:my-24">
+        <div className="mx-auto max-w-6xl">
+          <h4 className="mb-4 text-2xl font-medium text-night-500 md:text-4xl">
+            Utrustning
+          </h4>
+          <p className="mb-4 whitespace-pre-line text-base md:max-w-2xl md:text-lg">
+            På gymmet finner du både klassiska och moderna maskiner, samt ett
+            brett utbud av fria vikter. Vi erbjuder allt från klassiska
+            träningsredskap till riktigt tunga hantlar för att möta alla dina
+            träningsbehov.
+          </p>
+          <div className="space-y-2">
+            {data.map((item, index) => (
+              <div className="flex items-center gap-4" key={index}>
+                <FaRegCircleCheck className="text-xl" />
+                <p className="whitespace-pre-line text-base md:text-lg">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <CarouselSwiper />
       <section className="my-12 w-full px-4">
         <div className="mx-auto max-w-6xl">
