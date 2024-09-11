@@ -8,6 +8,7 @@ const config = {
     extend: {
       fontFamily: {
         "bebas-neue": "var(--font-bebas-neue)",
+        outfit: "var(--font-outfit)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -25,7 +26,7 @@ const config = {
           300: "#fefffd",
           400: "#fdfffd",
           500: "#fdfffc",
-          600: "#edf0e6",
+          600: "#F6F7F2",
           700: "#989997",
           800: "#656665",
           900: "#333332",

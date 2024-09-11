@@ -24,7 +24,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <HeaderSwiper ref={swiperRefLocal} />
       </div>
-      <div className="relative z-50 mx-auto my-24 max-w-6xl flex-1 space-y-12">
+      <div className="relative z-50 mx-auto my-12 max-w-6xl flex-1 space-y-12">
         <div className="space-y-4">
           <h1 className="text-3xl font-semibold text-vanilla-powder-500 md:text-6xl">
             Borås äldsta hardcoregym

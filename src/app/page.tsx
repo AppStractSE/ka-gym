@@ -1,4 +1,8 @@
+import AntiDopingInfoSection from "@/components/sections/AntiDopingInfoSection";
+import ContactSection from "@/components/sections/ContactSection";
+import FAQSection from "@/components/sections/FAQSection";
 import HeroSection from "@/components/sections/HeroSection";
+import Image from "next/image";
 import Link from "next/link";
 import { LuChevronRight } from "react-icons/lu";
 
@@ -6,7 +10,38 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4 md:my-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-12 transition-all duration-200 ease-in-out md:grid-cols-3 md:flex-row md:items-center md:gap-6">
+            <div className="col-span-1 md:col-span-2">
+              <h4 className="mb-4 text-2xl font-medium text-night-500 md:text-4xl">
+                Tradition och gemenskap
+              </h4>
+              <p className="whitespace-pre-line text-base md:text-lg">
+                Karl-Alfred Gym har varit ett hem för seriösa
+                träningsentusiaster i flera decennier. Trots sin blygsamma
+                storlek bär gymmet på en rik historia och en stark känsla av
+                gemenskap. Det drivs som en ideell förening, vilket speglar
+                medlemmarnas passion för träning och vilja att skapa en hållbar
+                träningsmiljö. Gymmet har alltid erbjudit en genuin och
+                personlig atmosfär, och dess väggar vittnar om årtionden av hårt
+                arbete och hängivenhet.
+              </p>
+            </div>
+            <div className="col-span-1 md:m-0">
+              <Image
+                alt="Karl-Alfreds Gym stämpellogga"
+                src="/karlalfred.png"
+                sizes="100vw"
+                width={128}
+                height={128}
+                className="mx-auto max-h-[200px] w-auto md:ml-auto md:mr-0"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="my-12 w-full px-4">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
           <div className="relative grid min-h-[25rem] items-end overflow-hidden rounded-xl bg-night-400 bg-[url('/hero-header.png')] bg-cover bg-bottom px-12 py-6 md:min-h-[35rem] md:px-24 md:py-12">
             <div className="absolute inset-0 bg-black bg-opacity-50" />
@@ -15,8 +50,8 @@ export default function Home() {
                 Vårt gym
               </h2>
               <h6 className="font-base text-center text-base text-vanilla-powder-500 md:text-lg">
-                Debitis voluptatem ipsa obcaecati alias quos odio veniam
-                aperiam, laudantium ut!
+                I gymmet finner du både maskiner och fria vikter, inklusive
+                hantlar upp till 73kg.
               </h6>
             </div>
             <Link
@@ -33,8 +68,8 @@ export default function Home() {
                 Träna hos oss
               </h2>
               <h6 className="font-base text-center text-base text-vanilla-powder-500 md:text-lg">
-                Debitis voluptatem ipsa obcaecati alias quos odio veniam
-                aperiam, laudantium ut!
+                Kom igång med träningen hos oss och upplev en ny nivå av
+                motivation!
               </h6>
             </div>
             <Link
@@ -46,11 +81,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="my-6 w-full px-4">
+      <section className="my-12 w-full px-4">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 items-center overflow-hidden rounded-xl bg-vanilla-powder-600 md:grid-cols-3">
-            <div className="col-span-1">
-              <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
+            <div className="col-span-1 h-full">
+              <img
+                src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e"
+                className="max-h-full min-h-full"
+              />
             </div>
             <div className="col-span-2 p-6 text-night-500 md:p-12">
               <div>
@@ -79,6 +117,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ContactSection />
+      <FAQSection />
+      <AntiDopingInfoSection />
     </>
   );
 }
