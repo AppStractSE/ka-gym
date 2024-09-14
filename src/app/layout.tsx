@@ -2,6 +2,7 @@ import Main from "@/components/Main";
 import Footer from "@/components/footer/Footer";
 import Navigation from "@/components/navigation/Navigation";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 import { bebas_neue, outfit } from "@/utils/fonts";
 import { ReactNode } from "react";
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={`${outfit.className} ${bebas_neue.variable}`}>
+        <Toaster />
         <Navigation />
         <Main>{children}</Main>
         <Footer />
