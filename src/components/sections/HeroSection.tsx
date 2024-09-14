@@ -35,7 +35,7 @@ const HeroSection = () => {
         <div className="inline-block">
           <Link
             href="/bli-medlem"
-            className="block w-fit rounded bg-vanilla-powder-500 px-6 py-2.5 hover:text-vanilla-powder-500"
+            className="block w-fit rounded bg-vanilla-powder-500 px-6 py-2.5 hover:bg-night-500 hover:text-vanilla-powder-500"
           >
             Bli medlem
           </Link>

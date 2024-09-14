@@ -56,7 +56,7 @@ export default function Home() {
             </div>
             <Link
               href="/vart-gym"
-              className="relative z-50 mt-auto block w-fit place-self-center rounded bg-vanilla-powder-500 px-6 py-2.5 hover:text-vanilla-powder-500"
+              className="relative z-50 mt-auto block w-fit place-self-center rounded bg-vanilla-powder-500 px-6 py-2.5 hover:bg-night-500 hover:text-vanilla-powder-500"
             >
               Läs mer om gymmet
             </Link>
