@@ -2,25 +2,17 @@
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { RxExitFullScreen } from "react-icons/rx";
-import { FreeMode, Keyboard, Navigation, Thumbs } from "swiper/modules";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 interface Props {
   images: string[];
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  thumbsSwiper: any;
-  setThumbsSwiper: any;
 }
 
-const ModalCarouselSwiper = ({
-  images,
-  showModal,
-  setShowModal,
-  thumbsSwiper,
-  setThumbsSwiper,
-}: Props) => {
-  const [newThumbsSwiper, setNewThumbsSwiper] = useState(thumbsSwiper);
+const ModalCarouselSwiper = ({ images, showModal, setShowModal }: Props) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape" && showModal) {
@@ -35,76 +27,78 @@ const ModalCarouselSwiper = ({
     };
   }, [showModal]);
   return (
-    <div className="flex h-full flex-col py-2">
-      <div className="h-full w-full">
-        <Swiper
-          grabCursor={true}
-          keyboard={{
-            enabled: true,
-          }}
-          loop={true}
-          slidesPerView={1}
-          spaceBetween={0}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          thumbs={{ swiper: newThumbsSwiper }}
-          modules={[FreeMode, Navigation, Thumbs, Keyboard]}
-          className="h-full"
-        >
-          <div className="swiper-button-prev absolute left-0 top-[50%] z-10 transform text-5xl duration-200 ease-in-out hover:scale-125">
+    <div className="w-full max-w-screen-xl">
+      <Swiper
+        className="overflow-hidden rounded-lg"
+        loop={true}
+        freeMode={false}
+        slidesPerView={1}
+        spaceBetween={0}
+        grabCursor={true}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+      >
+        <div className="swiper-button-prev absolute left-4 top-[50%] z-10 hidden transform text-4xl duration-200 ease-in-out hover:scale-125 md:block">
+          <div className="rounded-full bg-black p-1">
             <HiChevronLeft />
           </div>
-          {images.map((image, index) => (
-            <SwiperSlide className="mx-auto h-auto w-full" key={index}>
-              <img
-                className="mx-auto h-full rounded-lg object-contain"
-                src={image}
-              />
-            </SwiperSlide>
-          ))}
-          <div className="swiper-button-next absolute right-0 top-[50%] z-10 transform text-5xl duration-200 ease-in-out hover:scale-125">
+        </div>
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img
+              className="h-auto min-h-[300px] w-full object-cover"
+              src={image}
+            />
+          </SwiperSlide>
+        ))}
+        <div className="swiper-button-next absolute right-4 top-[50%] z-10 hidden transform text-4xl duration-200 ease-in-out hover:scale-125 md:block">
+          <div className="rounded-full bg-black p-1">
             <HiChevronRight />
           </div>
-          <div
-            onClick={() => setShowModal(!showModal)}
-            className="absolute bottom-4 right-4 z-10 transform cursor-pointer text-4xl text-vanilla-powder-500 opacity-80 duration-200 ease-in-out hover:scale-125 hover:opacity-100"
-          >
-            <RxExitFullScreen />
-          </div>
-        </Swiper>
-      </div>
-      <div>
-        <Swiper
-          grabCursor={true}
-          onSwiper={setNewThumbsSwiper as any}
-          loop={true}
-          slidesPerView={3}
-          breakpoints={{
-            640: {
-              slidesPerView: 4,
-            },
-            768: {
-              slidesPerView: 5,
-            },
-            1024: {
-              slidesPerView: 7,
-            },
-          }}
-          spaceBetween={8}
-          freeMode={true}
-          watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs]}
-          className="mt-2"
+        </div>
+        <div
+          onClick={() => setShowModal(false)}
+          className="absolute bottom-4 right-4 z-[9999] transform cursor-pointer rounded-full bg-black p-1 text-3xl text-vanilla-powder-500 opacity-80 duration-200 ease-in-out hover:scale-125 hover:opacity-100"
         >
-          {images.map((image, index) => (
-            <SwiperSlide key={index} className="cursor-pointer">
-              <img src={image} className="h-full rounded-lg object-cover" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+          <RxExitFullScreen />
+        </div>
+      </Swiper>
+      <Swiper
+        id="thumbsSwiper"
+        grabCursor={true}
+        loop={true}
+        slidesPerView={3}
+        spaceBetween={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        onSwiper={setThumbsSwiper as any}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="overflow-hidden rounded-md py-2"
+        breakpoints={{
+          640: {
+            slidesPerView: 3.5,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+          1280: {
+            slidesPerView: 6,
+          },
+        }}
+      >
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img src={image} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
