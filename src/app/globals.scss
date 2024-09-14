@@ -63,7 +63,7 @@ a {
 }
 
 .scroll-to-top {
-  @apply hidden fixed bottom-8 right-[1%] 2xl:right-[2.5%] z-[99999] cursor-pointer rounded-xl bg-vanilla-powder-300 p-2 text-2xl text-night-700 mix-blend-difference transition-all duration-500;
+  @apply hidden fixed bottom-8 right-[1%] 2xl:right-[2.5%] z-[99] cursor-pointer rounded-xl bg-vanilla-powder-300 p-2 text-2xl text-night-700 mix-blend-difference transition-all duration-500;
 
   @media screen and (min-width: 1340px) {
     @apply block;
