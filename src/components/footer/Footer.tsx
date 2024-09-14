@@ -5,13 +5,15 @@ import { footerData } from "./data";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-b from-night-600 to-night-500 px-4 text-vanilla-powder-500">
-      <div className="mx-auto max-w-6xl pb-12 pt-8 md:pb-4">
+    <footer className="w-full px-4 bg-gradient-to-b from-night-600 to-night-500 text-vanilla-powder-500">
+      <div className="max-w-6xl pt-8 pb-12 mx-auto md:pb-4">
         <div className="flex items-start justify-between md:items-center">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {footerData.map((link) => (
               <div key={link.label}>
-                <h2 className="mb-2 text-2xl md:text-2xl">{link.label}</h2>
+                <h4 className="mb-2 text-xl md:text-2xl">
+                  {link.label}
+                </h4>
                 <ul className="space-y-1">
                   {link.links.map((link) => (
                     <li key={link.label} className="text-lg md:text-xl">
@@ -62,7 +64,7 @@ const Footer = () => {
           <a
             href="https://appstract.se/"
             target="_blank"
-            className="mb-2 flex w-fit items-center gap-1 text-base text-vanilla-powder-400 opacity-50 hover:underline sm:text-center"
+            className="flex items-center gap-1 mb-2 text-base opacity-50 w-fit text-vanilla-powder-400 hover:underline sm:text-center"
           >
             Webbdesign av appstract © 2024
           </a>
@@ -73,7 +75,7 @@ const Footer = () => {
             >
               Antidopingpolicy
             </Link>
-            <span>
+            <span className="flex items-center justify-center">
               <small>•</small>
             </span>
             <Link

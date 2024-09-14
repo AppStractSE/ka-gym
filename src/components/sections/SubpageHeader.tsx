@@ -9,7 +9,7 @@ const SubpageHeader = ({ title, image }: Props) => {
     >
       <div className="overlay" />
       <div className="relative mx-auto max-w-6xl flex-1 space-y-12 py-24">
-        <h1 className="text-center text-3xl font-bold text-vanilla-powder-500 md:text-6xl">
+        <h1 className="text-center text-3xl text-vanilla-powder-500 md:text-6xl">
           {title}
         </h1>
       </div>

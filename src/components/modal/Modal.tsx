@@ -15,7 +15,7 @@ const Modal = ({ children, setShowModal, showModal }: Props) => {
   }, [showModal]);
   return (
     <div
-      className={`fixed inset-0 z-[999999999] h-screen w-auto transform bg-night-500 transition-all duration-500 ease-in-out
+      className={`fixed inset-0 z-[999999999] flex h-screen w-auto transform items-center justify-center bg-night-500 transition-all duration-500 ease-in-out
         ${
           showModal
             ? "translate-y-0 opacity-100"

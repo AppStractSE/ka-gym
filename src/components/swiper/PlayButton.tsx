@@ -8,7 +8,7 @@ interface Props {
 const PlayButton = ({ pauseSlider, handlePauseSlider }: Props) => {
   return (
     <div
-      className="cursor-pointer rounded-md border border-vanilla-powder-500 p-2.5 text-lg text-vanilla-powder-500 opacity-75 hover:bg-night-600 hover:opacity-100"
+      className="cursor-pointer rounded-md border border-vanilla-powder-500 p-2.5 text-lg text-vanilla-powder-500 opacity-75 hover:md:bg-night-600 hover:md:opacity-100"
       onClick={handlePauseSlider}
     >
       {pauseSlider ? <GrPlayFill /> : <GrPauseFill />}
