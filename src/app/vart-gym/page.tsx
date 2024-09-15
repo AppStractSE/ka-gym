@@ -20,9 +20,7 @@ const page = () => {
       <SubpageHeader title="Vårt gym" image="bg-[url('/legpress.png')]" />
       <section className="my-12 w-full px-4 md:my-24">
         <div className="mx-auto max-w-6xl">
-          <h4 className="mb-4 text-2xl font-medium text-night-500 md:text-4xl">
-            Utrustning
-          </h4>
+          <h4 className="mb-4 text-2xl font-medium md:text-4xl">Utrustning</h4>
           <p className="mb-4 whitespace-pre-line text-base md:max-w-2xl md:text-lg">
             På gymmet finner du både klassiska och moderna maskiner, samt ett
             brett utbud av fria vikter. Vi erbjuder allt från klassiska
@@ -48,9 +46,9 @@ const page = () => {
             <div className="col-span-1">
               <img src="https://85158a7b9e.clvaw-cdnwnd.com/d2564caf77c7232d079ab0cfb3a6eb82/200000220-ac896ac89b/100.webp?ph=85158a7b9e" />
             </div>
-            <div className="col-span-2 p-6 text-night-500 md:p-12">
+            <div className="col-span-2 p-6 md:p-12">
               <div>
-                <h4 className="mb-4 text-2xl font-medium text-night-500 md:text-4xl">
+                <h4 className="mb-4 text-2xl font-medium md:text-4xl">
                   Karl-Alfreds syn på doping
                 </h4>
                 <p className="mb-12 text-base">

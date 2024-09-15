@@ -20,25 +20,22 @@ const HeroSection = () => {
     }
   };
   return (
-    <section className="relative flex min-h-[65vh] w-full items-end px-4 md:min-h-[90vh]">
+    <section className="relative flex min-h-[70vh] w-full items-end px-4 md:min-h-[90vh]">
       <div className="absolute inset-0">
         <HeaderSwiper ref={swiperRefLocal} />
       </div>
-      <div className="relative z-50 mx-auto my-12 max-w-6xl flex-1 space-y-12">
-        <div className="space-y-4">
-          <h1 className="text-3xl font-semibold text-vanilla-powder-500 md:text-6xl">
-            Borås äldsta hardcoregym
-          </h1>
-
-          <h6 className="font-base max-w-sm font-medium text-vanilla-powder-500 md:max-w-lg md:text-xl">
-            Sedan 1980 har vårt gym varit en fristad för de som vet att äkta
-            framsteg kräver hårt arbete och beslutsamhet.
-          </h6>
-        </div>
+      <div className="relative z-50 mx-auto mb-24 max-w-6xl flex-1">
+        <h1 className="mb-4 text-4xl text-vanilla-powder-500 md:text-6xl">
+          Borås äldsta hardcoregym
+        </h1>
+        <h6 className="mb-12 max-w-sm font-medium text-vanilla-powder-500 md:max-w-lg md:text-xl">
+          Sedan 1980 har vårt gym varit en fristad för de som vet att äkta
+          framsteg kräver hårt arbete och beslutsamhet.
+        </h6>
         <div className="inline-block">
           <Link
             href="/bli-medlem"
-            className="block w-fit rounded bg-vanilla-powder-500 px-6 py-2.5 text-night-500 hover:bg-night-500 hover:text-vanilla-powder-500"
+            className="block w-fit rounded bg-vanilla-powder-500 px-6 py-2.5 hover:bg-night-500 hover:text-vanilla-powder-500"
           >
             Bli medlem
           </Link>

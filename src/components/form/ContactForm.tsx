@@ -1,6 +1,7 @@
 "use client";
 import { encode } from "querystring";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 interface IContactForm {
   FullName: string;
@@ -33,14 +34,36 @@ const ContactForm = () => {
       message: data.Message,
     };
 
-    fetch("/forms.html", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(formData),
-    })
-      .then(() => alert("Thank you for your submission"))
-      .catch((error) => alert(error))
-      .then(() => reset());
+    toast
+      .promise(
+        fetch("/forms.html", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode(formData),
+        }),
+        {
+          loading: "Skickar meddelande...",
+          success: "Meddelande skickat! Vi återkommer så snart vi kan.",
+          error: "Något gick fel med att skicka meddelandet. Försök igen.",
+        },
+        {
+          style: {
+            minWidth: "250px",
+          },
+          position: "bottom-center",
+          className: "!bg-night-500 !text-vanilla-powder-500",
+          success: {
+            duration: 8000,
+            icon: "💪",
+          },
+        },
+      )
+      .catch((error) => {
+        console.log(error.message);
+      })
+      .then(() => {
+        reset();
+      });
   };
 
   const baseClasses = "contactform ";
