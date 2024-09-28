@@ -11,7 +11,7 @@ export const questionsAndAnswers: QuestionAndAnswer[] = [
   {
     question: "Hur länge är mitt medlemskap giltigt?",
     answer:
-      "Medlemskapet är giltigt i 12 månader från och med den dag du tecknar det.",
+      "Medlemskapet löper från startdatumet fram till den 31/12 då nytt medlemskap kan tecknas.",
   },
   {
     question: "Kan jag säga upp mitt medlemskap?",
@@ -19,8 +19,7 @@ export const questionsAndAnswers: QuestionAndAnswer[] = [
   },
   {
     question: "Vad kostar det att bli medlem?",
-    answer:
-      "Priset för medlemskap hos oss varierar beroende på vilket paket du väljer. Exempelvis om ni är en grupp som vill träna tillsammans så kan vi erbjuda en grupprabatt. Kontakta oss för mer information.",
+    answer: "Kontakta oss via kontaktformuläret för prisuppgifter.",
   },
   {
     question: "Kan jag prova på innan jag bestämmer mig?",
@@ -29,17 +28,15 @@ export const questionsAndAnswers: QuestionAndAnswer[] = [
   },
   {
     question: "Hur betalar jag mitt medlemskap?",
-    answer: "Vi erbjuder betalning via faktura, swish och autogiro.",
+    answer: "Vi erbjuder betalning via banköverföring och swish.",
   },
   {
     question: "Kan jag frysa mitt medlemskap?",
-    answer:
-      "Ja, du kan frysa ditt medlemskap. Kontakta oss för mer information.",
+    answer: "Nej, man kan inte frysa medlemskapet.",
   },
   {
     question: "Jag är under 18 år, kan jag bli medlem?",
-    answer:
-      "Ja, du kan bli medlem hos oss om du är under 18 år. Observera att du behöver målsmans tillstånd.",
+    answer: "Man måste ha fyllt 18 år för att träna hos oss.",
   },
   {
     question: "Jag är helt ny på gymmet, kan jag få hjälp?",
