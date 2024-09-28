@@ -30,8 +30,8 @@ export const footerData: FooterLink[] = [
     label: "Kontakt",
     links: [
       {
-        label: "Vindelgatan 25B, 504 65 Borås",
-        href: "https://www.google.com/maps/place/Vindelgatan+25B,+504+65+Bor%C3%A5s/@57.7223841,12.9084363,17z/data=!3m1!4b1!4m6!3m5!1s0x465aa75ae2fdef99:0xf54bf212959eeab1!8m2!3d57.7223813!4d12.9110112!16s%2Fg%2F11c5l34jbs?entry=ttu",
+        label: "Vindelgatan 25C, 504 65 Borås",
+        href: "https://www.google.com/maps/place/Vindelgatan+25C,+504+65+Bor%C3%A5s/@57.7223841,12.9084363,17z/data=!3m1!4b1!4m6!3m5!1s0x465aa75ae2fdef99:0xf54bf212959eeab1!8m2!3d57.7223813!4d12.9110112!16s%2Fg%2F11c5l34jbs?entry=ttu",
         internal: false,
         icon: true,
       },
