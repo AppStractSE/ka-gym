@@ -17,7 +17,7 @@ const ContactSection = () => {
           <div className="space-y-4">
             <a
               target="_blank"
-              href="https://www.google.com/maps/place/Vindelgatan+25B,+504+65+Bor%C3%A5s/@57.7223841,12.9084363,17z/data=!3m1!4b1!4m6!3m5!1s0x465aa75ae2fdef99:0xf54bf212959eeab1!8m2!3d57.7223813!4d12.9110112!16s%2Fg%2F11c5l34jbs?entry=ttu"
+              href="https://www.google.com/maps/place/Vindelgatan+25C,+504+65+Bor%C3%A5s/@57.7223841,12.9084363,17z/data=!3m1!4b1!4m6!3m5!1s0x465aa75ae2fdef99:0xf54bf212959eeab1!8m2!3d57.7223813!4d12.9110112!16s%2Fg%2F11c5l34jbs?entry=ttu"
               className="block w-fit hover:underline hover:underline-offset-4"
             >
               <div className="flex items-center gap-4">
@@ -25,7 +25,7 @@ const ContactSection = () => {
                   <GrLocationPin />
                 </div>
                 <div className="font-regular text-lg">
-                  Vindelgatan 25B, 504 65 Borås
+                  Vindelgatan 25C, 504 65 Borås
                 </div>
               </div>
             </a>
