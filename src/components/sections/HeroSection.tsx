@@ -24,11 +24,11 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <HeaderSwiper ref={swiperRefLocal} />
       </div>
-      <div className="relative z-50 mx-auto mb-24 max-w-6xl flex-1">
+      <div className="relative z-50 flex-1 max-w-6xl mx-auto mb-24">
         <h1 className="mb-4 text-4xl text-vanilla-powder-500 md:text-6xl">
           Borås äldsta hardcoregym
         </h1>
-        <h6 className="mb-12 max-w-sm font-medium text-vanilla-powder-500 md:max-w-lg md:text-xl">
+        <h6 className="max-w-sm mb-12 font-medium text-vanilla-powder-500 md:max-w-lg md:text-xl">
           Sedan 1980 har vårt gym varit en fristad för de som vet att äkta
           framsteg kräver hårt arbete och beslutsamhet.
         </h6>
