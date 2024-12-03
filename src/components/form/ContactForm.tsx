@@ -1,5 +1,4 @@
 "use client";
-import { encode } from "querystring";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -44,25 +43,30 @@ const ContactForm = () => {
     },
     mode: "onTouched",
   });
+
+  function generateEmailHTML(data: IContactForm, becomeMember: boolean) {
+  return `<div>Namn:<br>${data.FullName}<br>Meddelande:<br>${data.Message}<br>Telefonnummer:<br>${data.PhoneNumber}<br>${becomeMember ? `Ansöker om medlemskap:<br>Födelsedata:<br>${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}<br>Adress:<br>${data.Address}` : ""}</div>`;
+}
+
+
   const onSubmit = async (data: IContactForm) => {
     const formData = {
-      email: data.FullName,
-      name: data.Email,
+      name: data.FullName,
+      email: data.Email,
       subject: `Kontaktformulär ${becomeMember ? "- Medlemsförfrågan" : ""}`,
-      message: "string",
-      messageHtml: `<div>Namn:<br>${data.FullName}<br>Meddelande:<br>${data.Message}<br>Telefonnummer:<br>${data.PhoneNumber}<br>${becomeMember ? `Ansöker om medlemskap:<br>Födelsedata:<br>${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}<br>Adress:<br>${data.Address}` : ""}</div>`,
+      message: data.Message,
+      messageHtml: generateEmailHTML(data, becomeMember),
     };
 
     toast
       .promise(
-        fetch("http://sphere.appstract.se:8080/Mail/SendContactForm", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            Bearer: "",
-          },
-          body: encode(formData),
-        }),
+        fetch("/api/contact-form", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      }),
         {
           loading: "Skickar meddelande...",
           success: "Meddelande skickat! Vi återkommer så snart vi kan.",
