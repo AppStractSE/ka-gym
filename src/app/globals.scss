@@ -91,3 +91,8 @@ a {
   }
 
 }
+
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}

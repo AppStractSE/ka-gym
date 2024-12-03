@@ -6,7 +6,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 const ContactSection = () => {
   return (
     <section className="my-12 w-full bg-[#F6F7F2] px-4 py-12 md:my-24">
-      <div className="mx-auto flex max-w-6xl flex-col justify-center gap-6 md:flex-row md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col justify-center gap-12 md:flex-row md:justify-between md:gap-6">
         <div className="flex flex-col gap-6">
           <h2 className="text-2xl font-medium md:text-4xl">
             Vill du bli medlem?
@@ -55,7 +55,7 @@ const ContactSection = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex w-full max-w-[33.125rem] flex-col gap-6">
           <h2 className="text-2xl font-medium md:text-4xl">
             Kom i kontakt med oss
           </h2>
