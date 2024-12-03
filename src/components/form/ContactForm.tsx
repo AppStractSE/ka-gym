@@ -1,5 +1,4 @@
 "use client";
-import { encode } from "querystring";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -9,7 +8,7 @@ interface IContactForm {
   FullName: string;
   Email: string;
   PhoneNumber: string;
-  Message: string;
+  Message?: string;
   DateOfBirth?: {
     day?: string;
     month?: string;
@@ -44,24 +43,30 @@ const ContactForm = () => {
     },
     mode: "onTouched",
   });
+
+  function generateEmailHTML(data: IContactForm, becomeMember: boolean) {
+  return `<div>Namn:<br>${data.FullName}<br>Meddelande:<br>${data.Message}<br>Telefonnummer:<br>${data.PhoneNumber}<br>${becomeMember ? `Ansöker om medlemskap:<br>Födelsedata:<br>${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}<br>Adress:<br>${data.Address}` : ""}</div>`;
+}
+
+
   const onSubmit = async (data: IContactForm) => {
     const formData = {
-      "form-name": "contact-form",
       name: data.FullName,
       email: data.Email,
-      tel: data.PhoneNumber,
+      subject: `Kontaktformulär ${becomeMember ? "- Medlemsförfrågan" : ""}`,
       message: data.Message,
-      dob: `${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}`,
-      address: data.Address,
+      messageHtml: generateEmailHTML(data, becomeMember),
     };
 
     toast
       .promise(
-        fetch("/forms.html", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode(formData),
-        }),
+        fetch("/api/contact-form", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      }),
         {
           loading: "Skickar meddelande...",
           success: "Meddelande skickat! Vi återkommer så snart vi kan.",
@@ -208,14 +213,14 @@ const ContactForm = () => {
         <div className="mb-3">
           <textarea
             maxLength={500}
-            placeholder="Meddelande *"
+            placeholder={`Meddelande ${becomeMember ? "" : "*"}`}
             className={"contactform min-h-[150px] resize-none transition-all duration-200 ease-in-out focus-visible:min-h-[200px]"
               .concat(" ")
               .concat(baseClasses)
               .concat(" ")
               .concat(errors["Message"] ? errorClass : "")}
             {...register("Message", {
-              required: "Meddelande krävs",
+              required: becomeMember ? false : "Meddelande krävs",
               minLength: {
                 value: 10,
                 message: "Meddelandet måste vara minst 10 tecken",
@@ -244,12 +249,12 @@ const ContactForm = () => {
             checked={becomeMember}
             onChange={() => setBecomeMember(!becomeMember)}
             type="checkbox"
-            id="vehicle1"
-            name="vehicle1"
-            value="Bike"
+            id="becomeMember"
+            name="becomeMember"
+            value="becomeMember"
             className="h-5 w-5"
           />
-          <label htmlFor="vehicle1">Jag vill bli medlem</label>
+          <label htmlFor="becomeMember">Jag vill bli medlem</label>
         </div>
         {becomeMember ? (
           <>
@@ -384,14 +389,6 @@ const ContactForm = () => {
                 placeholder="Adress *"
                 {...register("Address", {
                   required: "Adress krävs",
-                  minLength: {
-                    value: 10,
-                    message: "Telefonnumret måste vara minst 10 tecken",
-                  },
-                  maxLength: {
-                    value: 15,
-                    message: "Telefonnumret får vara högst 15 tecken",
-                  },
                 })}
               />
               <p
