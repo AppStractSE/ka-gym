@@ -14,7 +14,11 @@ interface IContactForm {
     month?: string;
     year?: string;
   };
-  Address?: string;
+  Address?: {
+    Street?: string;
+    PostalCode?: string;
+    City?: string;
+  };
 }
 
 const ContactForm = () => {
@@ -39,15 +43,18 @@ const ContactForm = () => {
         month: "",
         year: "",
       },
-      Address: "",
+      Address: {
+        Street: "",
+        PostalCode: "",
+        City: "",
+      },
     },
     mode: "onTouched",
   });
 
   function generateEmailHTML(data: IContactForm, becomeMember: boolean) {
-  return `<div>Namn:<br>${data.FullName}<br>Meddelande:<br>${data.Message}<br>Telefonnummer:<br>${data.PhoneNumber}<br>${becomeMember ? `Ansöker om medlemskap:<br>Födelsedata:<br>${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}<br>Adress:<br>${data.Address}` : ""}</div>`;
-}
-
+    return `<div>Namn:<br>${data.FullName}<br><br>Meddelande:<br>${data.Message}<br><br>Telefonnummer:<br>${data.PhoneNumber}<br><br>${becomeMember ? `Ansöker om medlemskap:<br>Födelsedata:<br>${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}<br><br>Adress:<br>${data.Address?.Street}, ${data.Address?.PostalCode} ${data.Address?.City}` : ""}</div>`;
+  }
 
   const onSubmit = async (data: IContactForm) => {
     const formData = {
@@ -61,12 +68,12 @@ const ContactForm = () => {
     toast
       .promise(
         fetch("/api/contact-form", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      }),
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }),
         {
           loading: "Skickar meddelande...",
           success: "Meddelande skickat! Vi återkommer så snart vi kan.",
@@ -108,7 +115,7 @@ const ContactForm = () => {
     <div className="relative">
       <form onSubmit={handleSubmit(onSubmit)} name="contact-form">
         <input type="hidden" name="required-field" value="contact-form" />
-        <div className="mb-3 w-full">
+        <div className="w-full mb-3">
           <input
             className={baseClasses
               .concat(" ")
@@ -141,7 +148,7 @@ const ContactForm = () => {
           </p>
         </div>
         <div className="flex gap-3">
-          <div className="mb-3 w-full">
+          <div className="w-full mb-3">
             <input
               className={baseClasses
                 .concat(" ")
@@ -244,7 +251,7 @@ const ContactForm = () => {
             {errors.Message?.message}
           </p>
         </div>
-        <div className="mb-3 flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-3">
           <input
             checked={becomeMember}
             onChange={() => setBecomeMember(!becomeMember)}
@@ -252,13 +259,13 @@ const ContactForm = () => {
             id="becomeMember"
             name="becomeMember"
             value="becomeMember"
-            className="h-5 w-5"
+            className="w-5 h-5"
           />
           <label htmlFor="becomeMember">Jag vill bli medlem</label>
         </div>
         {becomeMember ? (
           <>
-            <div className="mb-3 flex w-full items-center gap-3 rounded-md bg-blue-500 p-4 text-sm text-white">
+            <div className="flex items-center w-full gap-3 p-4 mb-3 text-sm text-white bg-blue-500 rounded-md">
               <BsFillInfoCircleFill className="text-xl" />
               <p>
                 För att ansöka om medlemskap behöver du ange ditt födelsedatum
@@ -380,14 +387,14 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
-            <div className="mb-3 w-full">
+            <div className="w-full mb-3">
               <input
                 className={baseClasses
                   .concat(" ")
                   .concat(errors["Address"] ? errorClass : "")}
                 type="text"
                 placeholder="Adress *"
-                {...register("Address", {
+                {...register("Address.Street", {
                   required: "Adress krävs",
                 })}
               />
@@ -401,8 +408,58 @@ const ContactForm = () => {
                       : errorTextHiddenClasses,
                   )}
               >
-                {errors.Address?.message}
+                {errors.Address?.Street?.message}
               </p>
+            </div>
+            <div className="flex gap-3">
+              <div className="w-full mb-3">
+                <input
+                  className={baseClasses
+                    .concat(" ")
+                    .concat(errors["Address"] ? errorClass : "")}
+                  type="text"
+                  placeholder="Postnummer *"
+                  {...register("Address.PostalCode", {
+                    required: "Postnummer krävs",
+                  })}
+                />
+                <p
+                  role="alert"
+                  className={errorTextBaseClass
+                    .concat(" ")
+                    .concat(
+                      errors["Address"]
+                        ? errorTextVisibleClasses
+                        : errorTextHiddenClasses,
+                    )}
+                >
+                  {errors.Address?.PostalCode?.message}
+                </p>
+              </div>
+              <div className="w-full">
+                <input
+                  className={baseClasses
+                    .concat(" ")
+                    .concat(errors["Address"] ? errorClass : "")}
+                  type="text"
+                  placeholder="Ort *"
+                  {...register("Address.City", {
+                    required: "Ort krävs",
+                  })}
+                />
+                <p
+                  role="alert"
+                  className={errorTextBaseClass
+                    .concat(" ")
+                    .concat(
+                      errors["Address"]
+                        ? errorTextVisibleClasses
+                        : errorTextHiddenClasses,
+                    )}
+                >
+                  {errors.Address?.City?.message}
+                </p>
+              </div>
             </div>
           </>
         ) : (
@@ -411,7 +468,7 @@ const ContactForm = () => {
         <button
           disabled={isSubmitting || submitted}
           type="submit"
-          className="contactform font-base font-medium hover:bg-night-500 hover:text-vanilla-powder-500"
+          className="font-medium contactform font-base hover:bg-night-500 hover:text-vanilla-powder-500"
         >
           Skicka
         </button>
@@ -430,7 +487,7 @@ const ContactForm = () => {
           <h6 className="text-3xl lg:text-center lg:text-2xl">
             Tack för ditt meddelande!
           </h6>
-          <p className="text-balance whitespace-pre-line text-xl lg:text-center lg:text-xl">
+          <p className="text-xl whitespace-pre-line text-balance lg:text-center lg:text-xl">
             Vi kommer att kontakta dig inom kort.
           </p>
           <button
