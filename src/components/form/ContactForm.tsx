@@ -261,7 +261,7 @@ const ContactForm = () => {
             value="becomeMember"
             className="w-5 h-5"
           />
-          <label htmlFor="becomeMember">Jag vill bli medlem</label>
+          <label htmlFor="becomeMember">Jag vill bli medlem eller förnya medlemskap</label>
         </div>
         {becomeMember ? (
           <>
