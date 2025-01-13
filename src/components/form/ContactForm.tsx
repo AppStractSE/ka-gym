@@ -53,7 +53,7 @@ const ContactForm = () => {
   });
 
   function generateEmailHTML(data: IContactForm, becomeMember: boolean) {
-    return `<div>Namn:<br>${data.FullName}<br><br>Meddelande:<br>${data.Message}<br><br>Telefonnummer:<br>${data.PhoneNumber}<br><br>${becomeMember ? `Ansöker om medlemskap:<br>Födelsedata:<br>${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}<br><br>Adress:<br>${data.Address?.Street}, ${data.Address?.PostalCode} ${data.Address?.City}` : ""}</div>`;
+    return `<div>Namn:<br>${data.FullName}<br><br>Meddelande:<br>${data.Message}<br><br>Email:<br>${data.Email}<br><br>Telefonnummer:<br>${data.PhoneNumber}<br><br>${becomeMember ? `Ansöker om medlemskap:<br>Födelsedata:<br>${data.DateOfBirth?.day}-${data.DateOfBirth?.month}-${data.DateOfBirth?.year}<br><br>Adress:<br>${data.Address?.Street}, ${data.Address?.PostalCode} ${data.Address?.City}` : ""}</div>`;
   }
 
   const onSubmit = async (data: IContactForm) => {
@@ -115,7 +115,7 @@ const ContactForm = () => {
     <div className="relative">
       <form onSubmit={handleSubmit(onSubmit)} name="contact-form">
         <input type="hidden" name="required-field" value="contact-form" />
-        <div className="w-full mb-3">
+        <div className="mb-3 w-full">
           <input
             className={baseClasses
               .concat(" ")
@@ -148,7 +148,7 @@ const ContactForm = () => {
           </p>
         </div>
         <div className="flex gap-3">
-          <div className="w-full mb-3">
+          <div className="mb-3 w-full">
             <input
               className={baseClasses
                 .concat(" ")
@@ -251,7 +251,7 @@ const ContactForm = () => {
             {errors.Message?.message}
           </p>
         </div>
-        <div className="flex items-center gap-2 mb-3">
+        <div className="mb-3 flex items-center gap-2">
           <input
             checked={becomeMember}
             onChange={() => setBecomeMember(!becomeMember)}
@@ -259,13 +259,15 @@ const ContactForm = () => {
             id="becomeMember"
             name="becomeMember"
             value="becomeMember"
-            className="w-5 h-5"
+            className="h-5 w-5"
           />
-          <label htmlFor="becomeMember">Jag vill bli medlem eller förnya medlemskap</label>
+          <label htmlFor="becomeMember">
+            Jag vill bli medlem eller förnya medlemskap
+          </label>
         </div>
         {becomeMember ? (
           <>
-            <div className="flex items-center w-full gap-3 p-4 mb-3 text-sm text-white bg-blue-500 rounded-md">
+            <div className="mb-3 flex w-full items-center gap-3 rounded-md bg-blue-500 p-4 text-sm text-white">
               <BsFillInfoCircleFill className="text-xl" />
               <p>
                 För att ansöka om medlemskap behöver du ange ditt födelsedatum
@@ -387,7 +389,7 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full mb-3">
+            <div className="mb-3 w-full">
               <input
                 className={baseClasses
                   .concat(" ")
@@ -412,7 +414,7 @@ const ContactForm = () => {
               </p>
             </div>
             <div className="flex gap-3">
-              <div className="w-full mb-3">
+              <div className="mb-3 w-full">
                 <input
                   className={baseClasses
                     .concat(" ")
@@ -468,7 +470,7 @@ const ContactForm = () => {
         <button
           disabled={isSubmitting || submitted}
           type="submit"
-          className="font-medium contactform font-base hover:bg-night-500 hover:text-vanilla-powder-500"
+          className="contactform font-base font-medium hover:bg-night-500 hover:text-vanilla-powder-500"
         >
           Skicka
         </button>
@@ -487,7 +489,7 @@ const ContactForm = () => {
           <h6 className="text-3xl lg:text-center lg:text-2xl">
             Tack för ditt meddelande!
           </h6>
-          <p className="text-xl whitespace-pre-line text-balance lg:text-center lg:text-xl">
+          <p className="text-balance whitespace-pre-line text-xl lg:text-center lg:text-xl">
             Vi kommer att kontakta dig inom kort.
           </p>
           <button
