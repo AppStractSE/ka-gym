@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { PiInfoBold } from "react-icons/pi";
 
 const InfoBar = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -11,7 +10,7 @@ const InfoBar = () => {
       if (ref.current) {
         document.documentElement.style.setProperty(
           "--info-bar-height",
-          `${ref.current.offsetHeight}px`
+          `${ref.current.offsetHeight}px`,
         );
       }
     };
@@ -23,9 +22,10 @@ const InfoBar = () => {
   return (
     <div
       ref={ref}
-      className="flex items-center justify-center gap-2 px-4 py-2 text-xs bg-amber-50 text-amber-800 md:text-sm"
+      className="px-4 py-2 text-xs text-center text-balance bg-amber-50 text-amber-800 md:text-sm"
     >
-      Gymmet är för tillfället fullsatt, välkommen åter!
+      För tillfället har vi uppnått max antal medlemmar, och därmed ber vi er
+      att återkomma vid ett senare tillfälle
     </div>
   );
 };

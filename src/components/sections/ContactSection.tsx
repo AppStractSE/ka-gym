@@ -60,12 +60,11 @@ const ContactSection = () => {
           <h2 className="text-2xl font-medium md:text-4xl">
             Kom i kontakt med oss
           </h2>
-          <div className="flex items-start gap-2 p-2 text-sm border rounded md:py-3 md:px-4 border-amber-300 bg-amber-50 text-amber-800">
+          <div className="flex items-start gap-2 p-2 text-sm border rounded border-amber-300 bg-amber-50 text-amber-800 md:px-4 md:py-3">
             <PiInfoBold className="mt-0.5 shrink-0 text-base" />
             <p className="text-balance">
-              För tillfället har vi uppnått max antal medlemmar, vi ber er
-              därmed att återkomma vid ett senare tillfälle. Tack för er
-              förståelse!
+              För tillfället har vi uppnått max antal medlemmar, och därmed ber
+              vi er att återkomma vid ett senare tillfälle
             </p>
           </div>
           <ContactForm />
