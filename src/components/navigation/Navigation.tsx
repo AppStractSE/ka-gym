@@ -23,7 +23,8 @@ const Navigation = () => {
   return (
     <>
       <header
-        className={`header transition-all duration-500 ease-in-out ${scroll ? "bg-vanilla-powder-500  shadow-sm" : "bg-transparent text-vanilla-powder-500"}`}
+        style={!scroll ? { marginTop: "var(--info-bar-height, 0px)" } : undefined}
+        className={`header transition-all duration-500 ease-in-out ${scroll ? "bg-vanilla-powder-500 shadow-sm" : "bg-transparent text-vanilla-powder-500"}`}
       >
         <div>
           <Link href={"/"} className="mr-12">
@@ -31,7 +32,7 @@ const Navigation = () => {
               Karl-Alfred Gym
             </h1>
           </Link>
-          <nav className="hidden items-center gap-2 py-2 font-bold sm:flex">
+          <nav className="items-center hidden gap-2 py-2 font-bold sm:flex">
             {navigation.map((navItem) => (
               <Link
                 key={navItem.label}
@@ -42,7 +43,7 @@ const Navigation = () => {
               </Link>
             ))}
           </nav>
-          <div className="ml-auto block sm:hidden">
+          <div className="block ml-auto sm:hidden">
             <button
               onClick={() => setShowDrawer(!showDrawer)}
               className={`m-2 -mr-2.5 block rounded p-2 text-xl transition-all duration-500 ease-in-out ${scroll ? "text-night-400 hover:text-night-800" : "text-vanilla-powder-500"}`}

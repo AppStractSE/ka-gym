@@ -1,5 +1,6 @@
 import Main from "@/components/Main";
 import Footer from "@/components/footer/Footer";
+import InfoBar from "@/components/navigation/InfoBar";
 import Navigation from "@/components/navigation/Navigation";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={`${outfit.className} ${bebas_neue.variable}`}>
+        <InfoBar />
         <Toaster />
         <Navigation />
         <Main>{children}</Main>

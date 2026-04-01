@@ -2,16 +2,17 @@ import ContactForm from "@/components/form/ContactForm";
 import { GrLocationPin } from "react-icons/gr";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { PiInfoBold } from "react-icons/pi";
 
 const ContactSection = () => {
   return (
     <section className="my-12 w-full bg-[#F6F7F2] px-4 py-12 md:my-24">
-      <div className="mx-auto flex max-w-6xl flex-col justify-center gap-12 md:flex-row md:justify-between md:gap-6">
+      <div className="flex flex-col justify-center max-w-6xl gap-12 mx-auto md:flex-row md:justify-between md:gap-6">
         <div className="flex flex-col gap-6">
           <h2 className="text-2xl font-medium md:text-4xl">
             Vill du bli medlem?
           </h2>
-          <p className="whitespace-pre-line text-base md:text-lg">
+          <p className="text-base whitespace-pre-line md:text-lg">
             {`Vad kul! Fyll i formuläret så återkommer vi så snart vi kan.\nDet går också bra att ringa, smsa eller maila.`}
           </p>
           <div className="space-y-4">
@@ -24,7 +25,7 @@ const ContactSection = () => {
                 <div className="text-2xl">
                   <GrLocationPin />
                 </div>
-                <div className="font-regular text-lg">
+                <div className="text-lg font-regular">
                   Vindelgatan 25C, 504 65 Borås
                 </div>
               </div>
@@ -37,7 +38,7 @@ const ContactSection = () => {
                 <div className="text-2xl">
                   <IoPhonePortraitOutline />
                 </div>
-                <div className="font-regular text-lg">070-940 56 41</div>
+                <div className="text-lg font-regular">070-940 56 41</div>
               </div>
             </a>
             <a
@@ -48,7 +49,7 @@ const ContactSection = () => {
                 <div className="text-2xl">
                   <MdOutlineMailOutline />
                 </div>
-                <div className="font-regular text-lg">
+                <div className="text-lg font-regular">
                   info@karlalfredgym.se
                 </div>
               </div>
@@ -59,6 +60,14 @@ const ContactSection = () => {
           <h2 className="text-2xl font-medium md:text-4xl">
             Kom i kontakt med oss
           </h2>
+          <div className="flex items-start gap-2 p-2 text-sm border rounded md:py-3 md:px-4 border-amber-300 bg-amber-50 text-amber-800">
+            <PiInfoBold className="mt-0.5 shrink-0 text-base" />
+            <p className="text-balance">
+              För tillfället har vi uppnått max antal medlemmar, vi ber er
+              därmed att återkomma vid ett senare tillfälle. Tack för er
+              förståelse!
+            </p>
+          </div>
           <ContactForm />
         </div>
       </div>
